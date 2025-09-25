@@ -7,6 +7,28 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
+  "navigation": {
+    "tabs": [],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "href": "https://atl.lat/docs",
+          "icon": "book-open-cover"
+        },
+        {
+          "anchor": "Guide",
+          "href": "https://atl.lat/guide",
+          "icon": "newspaper"
+        },
+        {
+          "anchor": "Lua",
+          "href": "https://atl.lat/lua",
+          "icon": "code"
+        }
+      ]
+    }
+  },
   "navbar": {
     "primary": {
       "type": "button",
