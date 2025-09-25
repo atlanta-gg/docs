@@ -9,24 +9,27 @@
     "dark": "#15803D"
   },
   "navigation":
-  [
-    {
-      "group": "Documentation",
-      "pages":
-      [
-        "index"
-      ]
-    },
-    {
-      "group": "Guides",
-      "pages":
-      [
-        "guides/getting-started",
-        "guides/advanced-guide",
-        "guides/issues"
-      ]
-    }
-  ],
+  {
+    "groups":
+    [
+      {
+        "group": "Documentation",
+        "pages":
+        [
+          "index"
+        ]
+      },
+      {
+        "group": "Guides",
+        "pages":
+        [
+          "guides/getting-started",
+          "guides/advanced-guide",
+          "guides/issues"
+        ]
+      }
+    ]
+  },
   "navbar":
   {
     "anchors":
