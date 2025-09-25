@@ -1,6 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Atlanta.gg Documentation",
+  "theme": "linden",
   "colors":
   {
     "primary": "#AF3264",
