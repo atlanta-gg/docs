@@ -9,29 +9,24 @@
     "dark": "#15803D"
   },
   "navigation":
-  {
-    "global":
+  [
     {
-      "anchors":
+      "group": "Documentation",
+      "pages":
       [
-        {
-          "anchor": "Documentation",
-          "href": "https://atl.lat/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Guide",
-          "href": "https://atl.lat/guide",
-          "icon": "newspaper"
-        },
-        {
-          "anchor": "Lua",
-          "href": "https://atl.lat/lua",
-          "icon": "code"
-        }
+        "index"
+      ]
+    },
+    {
+      "group": "Guides",
+      "pages":
+      [
+        "guides/getting-started",
+        "guides/advanced-guide",
+        "guides/issues"
       ]
     }
-  },
+  ],
   "navbar":
   {
     "anchors":
