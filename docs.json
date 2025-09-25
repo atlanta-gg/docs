@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "Atlanta.gg Documentation",
+  "name": "atlanta.gg",
   "theme": "maple",
   "colors":
   {
@@ -16,16 +16,23 @@
         "group": "Documentation",
         "pages":
         [
-          "index"
-        ]
+          "docs/index"
+        ],
+        "hidden": true
       },
       {
         "group": "Guides",
         "pages":
         [
           "guides/getting-started",
-          "guides/advanced-guide",
           "guides/issues"
+        ]
+      },
+      {
+        "group": "Roblox Lua",
+        "pages":
+        [
+          "roblox-lua/getting-started"
         ]
       }
     ]
@@ -35,13 +42,8 @@
     "anchors":
     [
         {
-          "anchor": "Documentation",
-          "href": "https://atl.lat/docs",
-          "icon": "book-open-cover"
-        },
-        {
           "anchor": "Guide",
-          "href": "https://atl.lat/guide",
+          "href": "https://atl.lat/guides",
           "icon": "newspaper"
         },
         {
