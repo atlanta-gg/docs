@@ -1,12 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
   "name": "Atlanta.gg Documentation",
   "colors":
   {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#AF3264",
+    "light": "#1E0610",
+    "dark": "#16040C"
   },
   "navigation":
   {
