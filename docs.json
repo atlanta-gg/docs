@@ -2,14 +2,18 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
   "name": "Atlanta.gg Documentation",
-  "colors": {
+  "colors":
+  {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "navigation": {
-    "global": {
-      "anchors": [
+  "navigation":
+  {
+    "global":
+    {
+      "anchors":
+      [
         {
           "anchor": "Documentation",
           "href": "https://atl.lat/docs",
@@ -28,15 +32,37 @@
       ]
     }
   },
-  "navbar": {
-    "primary": {
+  "navbar":
+  {
+    "anchors":
+    [
+        {
+          "anchor": "Documentation",
+          "href": "https://atl.lat/docs",
+          "icon": "book-open-cover"
+        },
+        {
+          "anchor": "Guide",
+          "href": "https://atl.lat/guide",
+          "icon": "newspaper"
+        },
+        {
+          "anchor": "Lua",
+          "href": "https://atl.lat/lua",
+          "icon": "code"
+        }
+    ],
+    "primary":
+    {
       "type": "button",
       "label": "Web",
       "href": "https://atlanta.gg"
     }
   },
-  "contextual": {
-    "options": [
+  "contextual":
+  {
+    "options":
+    [
      "copy",
      "view",
      "chatgpt",
@@ -45,10 +71,12 @@
      "mcp",
      "cursor",
      "vscode"
-   ]
+    ]
   },
-  "footer": {
-    "socials": {
+  "footer":
+  {
+    "socials":
+    {
       "github": "https://github.com/atlanta-gg",
       "website": "https://atlanta.gg"
     }
