@@ -8,18 +8,25 @@
     "light": "#AF3264",
     "dark": "#AF3264"
   },
+  "styling":
+  {
+    "eyebrows": "breadcrumbs"
+  },
   "navigation":
   {
-    "groups":
+    "anchors":
     [
       {
-        "group": "Documentation",
+        "anchor": "Documentation",
+        "icon": "book-open",
         "pages":
         [
           "docs/index"
-        ],
-        "hidden": true
-      },
+        ]
+      }
+    ],
+    "groups":
+    [
       {
         "group": "Guides",
         "pages":
@@ -33,25 +40,13 @@
         "pages":
         [
           "roblox-lua/getting-started"
-        ]
+        ],
+        "expanded": false
       }
     ]
   },
   "navbar":
   {
-    "anchors":
-    [
-        {
-          "anchor": "Guide",
-          "href": "https://atl.lat/guides",
-          "icon": "newspaper"
-        },
-        {
-          "anchor": "Lua",
-          "href": "https://atl.lat/lua",
-          "icon": "code"
-        }
-    ],
     "primary":
     {
       "type": "button",
