@@ -14,19 +14,16 @@
   },
   "navigation":
   {
-    "anchors":
+    "groups":
     [
       {
-        "anchor": "Documentation",
-        "icon": "book-open",
+        "group": "Documentation",
         "pages":
         [
           "docs/index"
-        ]
-      }
-    ],
-    "groups":
-    [
+        ],
+        "hidden": true
+      },
       {
         "group": "Guides",
         "pages":
