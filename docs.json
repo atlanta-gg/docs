@@ -41,10 +41,25 @@
         ]
       },
       {
-        "group": "Roblox Lua",
+        "group": "Roblox",
         "pages":
         [
-          "roblox-lua/getting-started"
+          {
+            "group": "Features",
+            "icon": "settings-2",
+            "pages":
+            [
+              "roblox/features/getting-started"
+            ]
+          },
+          {
+            "group": "lua",
+            "icon": "braces",
+            "pages":
+            [
+              "roblox/lua/cheat"
+            ]
+          }
         ]
       }
     ]
