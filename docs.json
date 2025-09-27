@@ -12,7 +12,7 @@
   {
     "eyebrows": "breadcrumbs"
   },
-  "favicon": "/images/icon.ico",
+  "favicon": "/assets/images/icon.ico",
   "icons":
   {
     "library": "lucide"
