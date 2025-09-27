@@ -12,6 +12,11 @@
   {
     "eyebrows": "breadcrumbs"
   },
+  "favicon": "/favicon.ico",
+  "icons":
+  {
+    "library": "lucide"
+  },
   "navigation":
   {
     "groups":
