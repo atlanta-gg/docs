@@ -74,5 +74,14 @@
       "github": "https://github.com/atlanta-gg",
       "website": "https://atlanta.gg"
     }
+  },
+  "errors":
+  {
+    "404":
+    {
+      "redirect": false,
+      "title": "Invalid Page",
+      "description": "Page could not be found."
+    }
   }
 }
