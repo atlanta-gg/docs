@@ -53,11 +53,22 @@
             ]
           },
           {
-            "group": "lua",
+            "group": "Lua",
             "icon": "braces",
             "pages":
             [
-              "roblox/lua/cheat"
+              "roblox/lua/constants",
+              "roblox/lua/enums",
+              "roblox/lua/types",
+              "roblox/lua/cheat",
+              "roblox/lua/entry",
+              "roblox/lua/event",
+              "roblox/lua/menu",
+              "roblox/lua/draw",
+              "roblox/lua/memory",
+              "roblox/lua/crypto",
+              "roblox/lua/input",
+              "roblox/lua/utils"
             ]
           }
         ]
