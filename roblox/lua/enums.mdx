@@ -27,6 +27,21 @@ This enumeration lists the available event triggers that scripts can register fu
 
 ## GlobalType
 
+This enumeration lists the available global section types that you can use with the **`menu.set_global`** and **`menu.get_global`** functions.
+
+<ParamField path="Ignore" type="number"> Ignored miscellaneous section used for storing Alpha / Shift.</ParamField>
+<ParamField path="Assist" type="number"> The assist section used for storing the Assist page globals.</ParamField>
+<ParamField path="PlayersEnemy" type="number"> The enemy players section used for storing the Players->Enemies page globals.</ParamField>
+<ParamField path="PlayersFriends" type="number"> The friend players section used for storing the Players->Friendlies page globals.</ParamField>
+<ParamField path="PlayersClient" type="number"> The client players section used for storing the Players->Client page globals.</ParamField>
+<ParamField path="Players" type="number"> The players section used for storing the Players page globals.</ParamField>
+<ParamField path="Visuals" type="number"> The visuals section used for storing the Visuals page globals.</ParamField>
+<ParamField path="Misc" type="number"> The misc section used for storing the Misc page globals.</ParamField>
+<ParamField path="Style" type="number"> The style section used for storing the Style window globals.</ParamField>
+<ParamField path="Settings" type="number"> The settings section used for storing the Config window globals.</ParamField>
+
+## ModelFlags
+
 This enumeration defines various binary flags used to represent the current state or properties of a ModelObject for checking in Lua scripts. These flags can be checked against a ModelObject's Flags property using the bitwise AND operator (`&`).
 
 <ParamField path="Visible" type="number"> Flag indicating that the model is currently not transparent (Visible).</ParamField>
