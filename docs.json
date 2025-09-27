@@ -13,6 +13,12 @@
     "eyebrows": "breadcrumbs"
   },
   "favicon": "/assets/images/icon.ico",
+  "logo":
+  {
+    "light": "/assets/images/icon.png",
+    "dark": "/assets/images/icon.png",
+    "href": "https://atl.lat/docs"
+  },
   "icons":
   {
     "library": "lucide"
