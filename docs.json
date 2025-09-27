@@ -29,7 +29,10 @@
         "pages":
         [
           "guides/getting-started",
-          "guides/issues"
+          "guides/navigation",
+          "guides/errors",
+          "guides/resources",
+          "guides/tips"
         ]
       },
       {
@@ -37,8 +40,7 @@
         "pages":
         [
           "roblox-lua/getting-started"
-        ],
-        "expanded": false
+        ]
       }
     ]
   },
