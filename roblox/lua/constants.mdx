@@ -5,6 +5,16 @@ keywords: ["constants", "macros", "values", "float", "integer", "double", "int",
 icon: "sigma"
 ---
 
+## Access
+
+All C++ constants are exposed to your Lua script via a single global table named **`constants`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
+
+```lua
+-- Usage example
+local max = constants.uint64_max;
+local max_float = constants.flt_max;
+```
+
 ## Integers
 
 This section lists all available integer-based C++ constant macros.
