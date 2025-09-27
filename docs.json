@@ -46,6 +46,7 @@
         [
           {
             "group": "Features",
+            "expanded": true,
             "icon": "settings-2",
             "pages":
             [
@@ -54,6 +55,7 @@
           },
           {
             "group": "Lua",
+            "expanded": true,
             "icon": "braces",
             "pages":
             [
