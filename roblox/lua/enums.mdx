@@ -11,10 +11,12 @@ All Enumerations (Enums) are defined **globally** as tables. You can access thei
 
 ```lua
 local draw_event_type = EventType.Draw;
-local unload_event_type = EventType["Unload"];
+local visuals_global_type = GlobalType["Visuals"];
 ```
 
 ## EventType
+
+This enumeration lists the available event triggers that scripts can register functions to handle using the **`event.set`** function.
 
 <ParamField path="Draw" type="number"> Triggered on each frame draw.</ParamField>
 <ParamField path="Tick" type="number"> Triggered on tick fired **`(10ms)`**.</ParamField>
@@ -22,3 +24,24 @@ local unload_event_type = EventType["Unload"];
 <ParamField path="Join" type="number"> Triggered when a new entry is registered.</ParamField>
 <ParamField path="Leave" type="number"> Triggered when a registered entry has left the game.</ParamField>
 <ParamField path="Unload" type="number"> Triggered when all scripts or the software is unloaded.</ParamField>
+
+## GlobalType
+
+This enumeration defines various binary flags used to represent the current state or properties of a ModelObject for checking in Lua scripts. These flags can be checked against a ModelObject's Flags property using the bitwise AND operator (`&`).
+
+<ParamField path="Visible" type="number"> Flag indicating that the model is currently not transparent (Visible).</ParamField>
+<ParamField path="Godded" type="number"> Flag indicating that the model is in a 'God Mode' or invulnerable state.</ParamField>
+<ParamField path="Ragdoll" type="number"> Flag indicating that the model is currently in a ragdoll or collapsed physics state.</ParamField>
+<ParamField path="Forcefield" type="number"> Flag indicating that the model is protected by a forcefield.</ParamField>
+<ParamField path="Undamaged" type="number"> Flag indicating that the model has not yet taken any damage.</ParamField>
+<ParamField path="Dead" type="number"> Flag indicating that the model is currently dead.</ParamField>
+<ParamField path="Tool" type="number"> Flag indicating that the model is currently holding a tool.</ParamField>
+<ParamField path="Void" type="number"> Flag indicating that the model is outside of the Workspace service (Primitive Nulled out).</ParamField>
+
+## EntryExclude
+
+This enumeration defines flags used to specify which types of entries should be excluded or filtered when retrieving the entry list.
+
+<ParamField path="None" type="number"> Does not exclude any entries; returns all entries regardless of their current state (e.g., even if they are in a removing state).</ParamField>
+<ParamField path="Valid" type="number"> Excludes entries that are currently in a removing or invalid state, returning only actively loaded entries.</ParamField>
+<ParamField path="Model" type="number"> Excludes entries that do not have an associated ModelObject, returning only entries with a ModelObject.</ParamField>
