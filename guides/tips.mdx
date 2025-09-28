@@ -4,3 +4,38 @@ description: "A collection of common tips, workarounds, and quick fixes for user
 keywords: ["tips", "fix", "workaround", "solution", "keybind", "settings.json", "robloxplayerbeta.exe", "multiple handles", "issue"]
 icon: "lightbulb"
 ---
+
+## Lost Menu Keybind
+
+If you closed the initial setup window before reassigning a menu key and are now unable to open the menu using the default **INSERT** key:
+
+1.  Open **File Explorer**.
+2.  Navigate to your system drive, typically **`C:\`** (e.g., `This PC` -> `Local Disk (C:)`).
+3.  Browse to the Atlanta configuration folder: **`C:\atlanta`** $\rightarrow$ **`<Selected Product Subfolder>`** (e.g., the folder named after the game).
+4.  Locate the file named **`settings.json`**.
+5.  **Right-click** on `settings.json` and select **Delete** or **Permanently Delete**.
+6.  **Relaunch the Atlanta client.**
+
+This action resets the local settings and will prompt the setup window again upon the next client launch.
+
+---
+
+## Persistent 'Multiple Handles' Error
+
+If you repeatedly encounter the "Multiple Handles" error (which applies to the game client):
+
+1.  Open the **Task Manager** (Ctrl + Shift + Esc).
+2.  Navigate to the **Details** tab at the top.
+3.  Scroll down to the letter 'R' and locate the game process: **`RobloxPlayerBeta.exe`**.
+4.  **Right-click** and select **End task** on *all* instances of `RobloxPlayerBeta.exe` listed.
+5.  **Relaunch the Atlanta client.**
+
+---
+
+## Inaccurate Waypoint Saving
+
+Waypoint coordinates are saved by rounding and converting floating-point numbers to integers, which can lead to precision loss.
+
+**Workaround:**
+
+When saving your waypoints, enable **waypoint visualization** first. Try saving the waypoint from a position that forces the coordinates to be the most accurate for your intended spot (e.g., jump up or move side-to-side slightly) to ensure the integer conversion captures the best possible location.
