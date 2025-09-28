@@ -13,7 +13,7 @@ All event C++ functions are exposed to your Lua script via a single global table
 
 ```lua Event Usage Example
 event.set(EventType.Draw, function() end); -- Dot Operator
-event["set"](EventType["Tick"], function() end); -- Bracket Operator
+event["set"]("Tick", function() end); -- Bracket Operator
 ```
 
 ---

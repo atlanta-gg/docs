@@ -15,3 +15,55 @@ All menu C++ functions are exposed to your Lua script via a single global table 
 menu.add_toggle("Toggle ^_^", "toggle_global_key", true, false); -- Dot Operator
 local menu_item = menu["get_item"]("toggle_global_key"); -- Bracket Operator
 ```
+
+---
+
+## get_item
+
+Get the value of a specific script configuration value.
+
+```lua
+get_item(key: string): any
+```
+
+<ParamField path="key" type="string" required>The unique string key of the configuration to get the value from.</ParamField>
+
+---
+
+## set_item
+
+Set the value of a specific script configuration value. Returns a boolean indicating the success of the set.
+
+```lua
+set_item(key: string, value: any): boolean
+```
+
+<ParamField path="key" type="string" required>The unique string key of the configuration to set the value for.</ParamField>
+<ParamField path="value" type="any" required>The new value to assign to the configuration. The value type must match the type of the configuration.</ParamField>
+
+---
+
+## get_global
+
+Get the value of a specific global configuration value.
+
+```lua
+get_global(global: GlobalType, key: string): any
+```
+
+<ParamField path="global" type="GlobalType" required>The global section to get the configuration value from.</ParamField>
+<ParamField path="key" type="string" required>The unique string key of the configuration to get the value from.</ParamField>
+
+---
+
+## set_global
+
+Set the value of a specific global configuration value. Returns a boolean indicating the success of the set.
+
+```lua
+set_global(global: GlobalType, key: string, value: any): boolean
+```
+
+<ParamField path="global" type="GlobalType" required>The global section to set the configuration value for.</ParamField>
+<ParamField path="key" type="string" required>The unique string key of the configuration to set the value for.</ParamField>
+<ParamField path="value" type="any" required>The new value to assign to the configuration. The value type must match the type of the configuration.</ParamField>
