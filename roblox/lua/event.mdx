@@ -23,7 +23,7 @@ event["set"]("Tick", function() end); -- Bracket Operator
 Registers a Lua function (callback) to be executed whenever a specified event is triggered. Returns a boolean indicating the success of the registration.
 
 ```lua
-set(event_type: EventType | string, callback: function): boolean
+set(EventType | string: event_type, function: callback): boolean
 ```
 
 <ParamField path="event_type" type="EventType | string" required>The event to register the callback for. This can be either a numeric value from the **EventType** enumeration (e.g., `EventType.Draw`) or its corresponding string name (e.g., `"Draw"`).</ParamField>

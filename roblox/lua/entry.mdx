@@ -48,7 +48,7 @@ list(EntryExclude?: exclude): table<EntryObject*>
 Retrieves a specific EntryObject instance based on its player object address.
 
 ```lua
-get(address: number): EntryObject*
+get(number: address): EntryObject*
 ```
 
 <ParamField path="address" type="number" required>The player object number address of the EntryObject to retrieve.</ParamField>
@@ -60,7 +60,7 @@ get(address: number): EntryObject*
 Retrieves the root PartObject associated with a given entrie's player object address.
 
 ```lua
-get_root(address: number): PartObject*
+get_root(number: address): PartObject*
 ```
 
 <ParamField path="address" type="number" required>The player object number address of the entry whose root object is requested.</ParamField>

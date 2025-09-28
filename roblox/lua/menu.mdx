@@ -23,7 +23,7 @@ local menu_item = menu["get_item"]("toggle_global_key"); -- Bracket Operator
 Get the value of a specific script configuration value.
 
 ```lua
-get_item(key: string): any
+get_item(string: key): any
 ```
 
 <ParamField path="key" type="string" required>The unique string key of the configuration to get the value from.</ParamField>
@@ -35,7 +35,7 @@ get_item(key: string): any
 Set the value of a specific script configuration value. Returns a boolean indicating the success of the set.
 
 ```lua
-set_item(key: string, value: any): boolean
+set_item(string: key, any: value): boolean
 ```
 
 <ParamField path="key" type="string" required>The unique string key of the configuration to set the value for.</ParamField>
@@ -48,7 +48,7 @@ set_item(key: string, value: any): boolean
 Get the value of a specific global configuration value.
 
 ```lua
-get_global(global: GlobalType, key: string): any
+get_global(GlobalType: global, string: key): any
 ```
 
 <ParamField path="global" type="GlobalType" required>The global section to get the configuration value from.</ParamField>
@@ -61,7 +61,7 @@ get_global(global: GlobalType, key: string): any
 Set the value of a specific global configuration value. Returns a boolean indicating the success of the set.
 
 ```lua
-set_global(global: GlobalType, key: string, value: any): boolean
+set_global(GlobalType: global, string: key, any: value): boolean
 ```
 
 <ParamField path="global" type="GlobalType" required>The global section to set the configuration value for.</ParamField>
