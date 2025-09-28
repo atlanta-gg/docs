@@ -4,3 +4,14 @@ description: "A comprehensive module containing functions for low-level graphica
 keywords: ["draw", "rendering", "graphics", "rect", "text", "line", "circle", "gradient", "image", "visuals", "module", "api", "paint"]
 icon: "pencil"
 ---
+
+## Access
+
+All draw C++ functions are exposed to your Lua script via a single global table named **`draw`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
+
+```lua Draw Usage Example
+event.set(EventType.Draw, function()
+	draw.line(Rect.new(10, 10, 200, 250), Color4.new(1, 0, 0, 1)); -- Dot Operator
+	draw["rect_filled"](Rect.new(Vector2.new(20, 30), Vector2.new(150, 215)), Color4.new(0, 0, 1, 1), 2.5); -- Bracket Operator
+end);
+```

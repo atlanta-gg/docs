@@ -4,3 +4,12 @@ description: "A utility module providing essential cryptographic and encoding fu
 keywords: ["crypto", "cryptography", "base64", "hex", "sha256", "sha512", "blake2b", "hash", "encode", "decode", "key", "nonce", "generate"]
 icon: "hash"
 ---
+
+## Access
+
+All crypto C++ functions are exposed to your Lua script via a single global table named **`crypto`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
+
+```lua Crypto Usage Example
+local base64_encoded_string = crypto.base64_encode("Hai =^,..,^= lf trx coin hydraulic press erc20 tron coin payment"); -- Dot Operator
+local base64_decoded_string = crypto["base64_decode"](base64_encoded_string); -- Bracket Operator
+```

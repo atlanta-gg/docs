@@ -4,3 +4,12 @@ description: "A module for simulating system-level mouse and keyboard input. Pro
 keywords: ["input", "mouse", "keyboard", "click", "press", "release", "move", "scroll", "module", "api"]
 icon: "keyboard"
 ---
+
+## Access
+
+All input C++ functions are exposed to your Lua script via a single global table named **`input`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
+
+```lua Input Usage Example
+input.mouse_right_click(); -- Dot Operator
+local input_mouse_location = input["get_mouse_location"](); -- Bracket Operator
+```

@@ -4,3 +4,12 @@ description: "The low-level module for accessing and manipulating process memory
 keywords: ["memory", "read", "write", "rpm", "wpm", "address", "bytes", "uint64", "float", "double", "low-level", "module", "api"]
 icon: "binary"
 ---
+
+## Access
+
+All memory C++ functions are exposed to your Lua script via a single global table named **`memory`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
+
+```lua Memory Usage Example
+local memory_read_bytes = memory.read_bytes(0x7FF72D040000, (100 * 8)); -- Dot Operator
+memory["write_uint64"](0x7FF72D040000, constants["uint64_max"]); -- Bracket Operator
+```

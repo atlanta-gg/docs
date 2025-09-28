@@ -4,3 +4,12 @@ description: "A general-purpose module containing miscellaneous utility function
 keywords: ["utils", "utility", "print", "warn", "error", "info", "log", "clipboard", "window", "process", "delta", "miscellaneous"]
 icon: "wrench"
 ---
+
+## Access
+
+All utils C++ functions are exposed to your Lua script via a single global table named **`utils`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
+
+```lua Utils Usage Example
+local current_delta = utils.get_delta(); -- Dot Operator
+utils["set_clipboard"](";-;"); -- Bracket Operator
+```

@@ -4,3 +4,12 @@ description: "The primary module containing high-level environment and game mani
 keywords: ["cheat", "environment", "functions", "set", "get", "manipulation", "ambience", "atmosphere", "game", "module", "api"]
 icon: "feather"
 ---
+
+## Access
+
+All cheat C++ functions are exposed to your Lua script via a single global table named **`cheat`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
+
+```lua Cheat Usage Example
+local instance_name = cheat.get_name(0x7FF72D040000); -- Dot Operator
+cheat["set_field_of_view"](0x7FF72D040000, 20); -- Bracket Operator
+```

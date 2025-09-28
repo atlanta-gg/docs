@@ -4,3 +4,12 @@ description: "The primary module for building and interacting with static widget
 keywords: ["zz"]
 icon: "menu"
 ---
+
+## Access
+
+All menu C++ functions are exposed to your Lua script via a single global table named **`menu`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
+
+```lua Menu Usage Example
+menu.add_toggle("Toggle ^_^", "toggle_global_key", true, false); -- Dot Operator
+local menu_item = menu["get_item"]("toggle_global_key"); -- Bracket Operator
+```
