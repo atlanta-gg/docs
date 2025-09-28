@@ -40,7 +40,7 @@ add_toggle(string: name, string: key, boolean?: default, boolean?: safe): boolea
 ```
 
 <ParamField path="name" type="string" required>The text label displayed next to the toggle switch in the menu.</ParamField>
-<ParamField path="key" type="string" required>The **unique configuration key** used to get and set the toggle's value via `get_item` and `set_item`.</ParamField>
+<ParamField path="key" type="string" required>The **unique configuration key** used to get and set the toggle's boolean value via `get_item` and `set_item`.</ParamField>
 <ParamField path="default" type="boolean">The **default value** (initial state) for the toggle. Defaults to `false`.</ParamField>
 <ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
 
@@ -50,13 +50,48 @@ add_toggle(string: name, string: key, boolean?: default, boolean?: safe): boolea
 
 Registers an interactive slider widget that allows selecting an integer value within a defined range. Returns a boolean indicating the success of the item creation.
 
+```lua
 add_slider_int(string: name, string: key, number?: default, number?: min, number?: max, boolean?: safe): boolean
+```
 
 <ParamField path="name" type="string" required>The text label displayed next to the slider in the menu.</ParamField>
 <ParamField path="key" type="string" required>The **unique configuration key** used to get and set the slider's integer value via `get_item` and `set_item`.</ParamField>
 <ParamField path="default" type="number">The **default value** (initial state) of the slider. Defaults to `0`.</ParamField>
 <ParamField path="min" type="number">The minimum value the slider can be set to. Defaults to `0`.</ParamField>
 <ParamField path="max" type="number">The maximum value the slider can be set to. Defaults to `100`.</ParamField>
+<ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
+
+---
+
+## add_slider_float
+
+Registers an interactive slider widget that allows selecting an floating-point value within a defined range. Returns a boolean indicating the success of the item creation.
+
+```lua
+add_slider_float(string: name, string: key, number?: default, number?: min, number?: max, boolean?: safe): boolean
+```
+
+<ParamField path="name" type="string" required>The text label displayed next to the slider in the menu.</ParamField>
+<ParamField path="key" type="string" required>The **unique configuration key** used to get and set the slider's floating-point value via `get_item` and `set_item`.</ParamField>
+<ParamField path="default" type="number">The **default value** (initial state) of the slider. Defaults to `0`.</ParamField>
+<ParamField path="min" type="number">The minimum value the slider can be set to. Defaults to `0`.</ParamField>
+<ParamField path="max" type="number">The maximum value the slider can be set to. Defaults to `100`.</ParamField>
+<ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
+
+---
+
+## add_single_combo
+
+Registers a combo list (combo box) widget that allows selecting a single item from a list of strings. Returns a boolean indicating the success of the item creation.
+
+```lua
+add_single_combo(string: name, string: key, number?: default, table?: items, boolean?: safe): boolean
+```
+
+<ParamField path="name" type="string" required>The text label displayed next to the combo list in the menu.</ParamField>
+<ParamField path="key" type="string" required>The **unique configuration key** used to get and set the selected item's index (as a number) via `get_item` and `set_item`.</ParamField>
+<ParamField path="default" type="number">The **initial 0-based index** of the item that should be selected when the script loads. Defaults to `0` (the first item).</ParamField>
+<ParamField path="items" type="table">A Lua table (list) of strings defining the selectable options (e.g., `{"Option A", "Option B"}`). Defaults to an empty list.</ParamField>
 <ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
 
 ---
