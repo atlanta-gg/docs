@@ -4,3 +4,21 @@ description: "A comprehensive list of known issues and error codes for the loade
 keywords: ["error", "bug", "issue", "troubleshoot", "fix", "solution", "resolve", "crash", "alert", "failure"]
 icon: "triangle-alert"
 ---
+
+## Scanning
+
+This section lists all core memory scanning and initialization errors.
+
+### Description
+
+If you encounter any of the errors listed below, it indicates that the software failed to locate or initialize critical memory offsets within the target application. These errors occur when the structure of the game's executable has changed, making existing scan patterns invalid.
+
+**Affected Scan Points:** `Datamodel Init`, `Services Init`, `Datamodel Pointer`, `Render View Pointer`, `Visual Engine Pointer`, `Base Init`
+
+### Resolution
+
+To resolve these errors, ensure the following steps are taken in order:
+
+1.  **Update the Software:** Verify that you are running the absolute latest version of the Atlanta client.
+2.  **Game Version Check:** Confirm that your target game is fully updated to the current public build.
+3.  **Channel Mismatch:** If both the client and game are updated, you may have been pushed to a non-standard or experimental game channel. To fix this, you must **revert your game client** to the known, current stable version.
