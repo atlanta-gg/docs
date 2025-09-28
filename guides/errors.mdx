@@ -5,6 +5,27 @@ keywords: ["error", "bug", "issue", "troubleshoot", "fix", "solution", "resolve"
 icon: "triangle-alert"
 ---
 
+## Bridge
+
+This section lists errors related to the driver initialization, kernel mapping, and communication bridge processes.
+
+### Description
+
+These errors indicate that the system is **actively blocking** the software's attempt to load or communicate with its kernel driver. This is typically due to strict system security policies or external software interference.
+
+**Affected Modules:** `Bridge User Handle`, `Driver Init`, `Bridge User Handle Close`, `Map Kernel Base`, `Bridge Status`, `Bridge Init`, `Threads Init`
+
+### Resolution
+
+To resolve these errors, you must disable any software or system features that interfere with low-level driver loading and memory access:
+
+1.  **Temporarily Disable Antivirus:** Completely disable any third-party antivirus, anticheat, or firewall software running on your system.
+2.  **Disable Windows Security Features:** Ensure that Windows' built-in security features are turned off:
+    * **Memory Integrity / HVCI:** Disable this in Windows Security.
+    * **Core Isolation:** Disable this setting.
+    * **Windows Defender/Security:** Temporarily pause real-time protection.
+3.  **Check Driver Blocklist:** If the issue persists, your operating system may be using a driver blocklist policy (often enforced by strict Memory Integrity settings). You must ensure these settings are disabled and the system is rebooted.
+
 ## Scanning
 
 This section lists all core memory scanning and initialization errors.
