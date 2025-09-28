@@ -29,8 +29,6 @@ valid(EntryObject*: entry, bool?: model): bool
 <ParamField path="entry" type="EntryObject*" required> The **EntryObject** instance (shared pointer) to be validated.</ParamField>
 <ParamField path="model" type="boolean"> If `true`, the function performs an additional check to ensure the entry has a valid **ModelObject**. Defaults to `false`.</ParamField>
 
----
-
 ## list
 
 Retrieves a Lua table containing the currently active list of Entry objects. The list can be filtered based on the optional exclusion flags.
@@ -40,8 +38,6 @@ list(EntryExclude?: exclude): table<EntryObject*>
 ```
 
 <ParamField path="exclude" type="EntryExclude">A flag from the **EntryExclude** enumeration specifying which types of entries should be filtered out. Defaults to `EntryExclude.None` (no filtering).</ParamField>
-
----
 
 ## get
 
@@ -53,8 +49,6 @@ get(number: address): EntryObject*
 
 <ParamField path="address" type="number" required>The player object number address of the EntryObject to retrieve.</ParamField>
 
----
-
 ## get_root
 
 Retrieves the root PartObject associated with a given entrie's player object address.
@@ -64,9 +58,7 @@ get_root(number: address): PartObject*
 ```
 
 <ParamField path="address" type="number" required>The player object number address of the entry whose root object is requested.</ParamField>
-
----
-
+gi
 ## get_client_instance
 
 Returns the local client's player instance address.
