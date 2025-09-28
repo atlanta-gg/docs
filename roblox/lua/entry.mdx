@@ -18,6 +18,11 @@ local entry_client_object = entry["get"](entry_client_instance); -- Bracket Oper
 
 ## valid
 
-> **Signature:** `valid(entry: EntryObject*, model: boolean | nil): boolean`
+Checks if the provided Entry object is currently valid and active (not in a removal state).
 
-<Summary>Checks if the provided Entry object is currently valid and active (not in a removal state). If the optional `model` argument is set to `true`, it also verifies that the entry has an associated model object.</Summary>
+```lua
+valid(EntryObject*: entry, bool?: model): bool
+```
+
+<ParamField path="entry" type="EntryObject" required> The **EntryObject** instance (shared pointer) to be validated.</ParamField>
+<ParamField path="model" type="boolean"> If `true`, the function performs an additional check to ensure the entry has a valid **ModelObject**. Defaults to `false`.</ParamField>
