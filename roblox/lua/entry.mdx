@@ -24,5 +24,30 @@ Checks if the provided Entry object is currently valid and active (not in a remo
 valid(EntryObject*: entry, bool?: model): bool
 ```
 
-<ParamField path="entry" type="EntryObject" required> The **EntryObject** instance (shared pointer) to be validated.</ParamField>
+<ParamField path="entry" type="EntryObject*" required> The **EntryObject** instance (shared pointer) to be validated.</ParamField>
 <ParamField path="model" type="boolean"> If `true`, the function performs an additional check to ensure the entry has a valid **ModelObject**. Defaults to `false`.</ParamField>
+
+---
+
+## valid
+
+Checks if the provided Entry object is currently valid and active (not in a removal state).
+
+```lua
+valid(EntryObject*: entry, bool?: model): bool
+```
+
+<ParamField path="entry" type="EntryObject*" required> The **EntryObject** instance (shared pointer) to be validated.</ParamField>
+<ParamField path="model" type="boolean"> If `true`, the function performs an additional check to ensure the entry has a valid **ModelObject**. Defaults to `false`.</ParamField>
+
+---
+
+## list
+
+Retrieves a Lua table containing the currently active list of Entry objects. The list can be filtered based on the optional exclusion flags.
+
+```
+list(EntryExclude?: exclude): table<EntryObject*>
+```
+
+<ParamField path="exclude" type="EntryExclude">A flag from the **EntryExclude** enumeration specifying which types of entries should be filtered out. Defaults to `EntryExclude.None` (no filtering).</ParamField>
