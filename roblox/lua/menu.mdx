@@ -82,17 +82,49 @@ add_slider_float(string: name, string: key, number?: default, number?: min, numb
 
 ## add_single_combo
 
-Registers a combo list (combo box) widget that allows selecting a single item from a list of strings. Returns a boolean indicating the success of the item creation.
+Registers a single combo box widget that allows selecting a **single item** from a list of strings. Returns a boolean indicating the success of the item creation.
 
 ```lua
 add_single_combo(string: name, string: key, number?: default, table?: items, boolean?: safe): boolean
 ```
 
-<ParamField path="name" type="string" required>The text label displayed next to the combo list in the menu.</ParamField>
+<ParamField path="name" type="string" required>The text label displayed next to the single combo box in the menu.</ParamField>
 <ParamField path="key" type="string" required>The **unique configuration key** used to get and set the selected item's index (as a number) via `get_item` and `set_item`.</ParamField>
-<ParamField path="default" type="number">The **initial 0-based index** of the item that should be selected when the script loads. Defaults to `0` (the first item).</ParamField>
+<ParamField path="default" type="number">The **initial 0-based index** (initial state) of the single combo box. Defaults to `0` (the first item).</ParamField>
 <ParamField path="items" type="table">A Lua table (list) of strings defining the selectable options (e.g., `{"Option A", "Option B"}`). Defaults to an empty list.</ParamField>
 <ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
+
+---
+
+## add_multi_combo
+
+Registers a multi combo box widget that allows the user to select **multiple items** from a list of strings. Returns a boolean indicating the success of the item creation.
+
+```lua
+add_multi_combo(string: name, string: key, table?: default, table?: items, boolean?: safe): boolean
+```
+
+<ParamField path="name" type="string" required>The text label displayed next to the multi combo box in the menu.</ParamField>
+<ParamField path="key" type="string" required>The **unique configuration key** used to get and set the selected item indices (as a table of numbers) via `get_item` and `set_item`.</ParamField>
+<ParamField path="default" type="table">A Lua table (list) of numbers defining the **initial 0-based indices** (initial state) of the multi combo box (e.g., `{0, 3, 4}`). Defaults to an empty list.</ParamField>
+<ParamField path="items" type="table">A Lua table (list) of strings defining the selectable options (e.g., `{"Option A", "Option B"}`). Defaults to an empty list.</ParamField>
+<ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
+
+---
+
+## add_colorpicker
+
+Registers a color picker widget that allows the user to choose an RGBA color. Returns a boolean indicating the success of the item creation.
+
+```lua
+add_colorpicker(string: name, string: key, Color4?: default, boolean?: alpha, boolean?: inlayed): boolean
+```
+
+<ParamField path="name" type="string" required>The text label displayed next to the color picker in the menu.</ParamField>
+<ParamField path="key" type="string" required>The **unique configuration key** used to get and set the colorpickers Color4 value via `get_item` and `set_item`.</ParamField>
+<ParamField path="default" type="Color4">The **default color** (initial state) for the picker. Defaults to a fully transparent black color (1, 1, 1, 1).</ParamField>
+<ParamField path="alpha" type="boolean">If `true`, the color picker will include an Alpha (transparency) slider. Defaults to `true`.</ParamField>
+<ParamField path="inlayed" type="boolean">If `true`, the color picker will be inlayed further down below the last widget. Defaults to `false`.</ParamField>
 
 ---
 
