@@ -29,24 +29,11 @@ valid(EntryObject*: entry, bool?: model): bool
 
 ---
 
-## valid
-
-Checks if the provided Entry object is currently valid and active (not in a removal state).
-
-```lua
-valid(EntryObject*: entry, bool?: model): bool
-```
-
-<ParamField path="entry" type="EntryObject*" required> The **EntryObject** instance (shared pointer) to be validated.</ParamField>
-<ParamField path="model" type="boolean"> If `true`, the function performs an additional check to ensure the entry has a valid **ModelObject**. Defaults to `false`.</ParamField>
-
----
-
 ## list
 
 Retrieves a Lua table containing the currently active list of Entry objects. The list can be filtered based on the optional exclusion flags.
 
-```
+```lua
 list(EntryExclude?: exclude): table<EntryObject*>
 ```
 
