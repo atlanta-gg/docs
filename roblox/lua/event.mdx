@@ -4,3 +4,25 @@ description: "The core event management module, used for registering and unregis
 keywords: ["event", "register", "set", "callback", "function", "trigger", "eventtype", "draw", "unload", "module", "api"]
 icon: "zap"
 ---
+
+## Access
+
+All event C++ functions are exposed to your Lua script via a single global table named **`event`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
+
+```lua Event Usage Example
+event.set(EventType.Draw, function() end); -- Dot Operator
+event["set"](EventType["Tick"], function() end); -- Bracket Operator
+```
+
+---
+
+## set
+
+Registers a Lua function (callback) to be executed whenever a specified event is triggered. Returns a boolean indicating the success of the registration.
+
+```lua
+set(event_type: EventType | string, callback: function): boolean
+```
+
+<ParamField path="event_type" type="EventType | string" required>The event to register the callback for. This can be either a numeric value from the **EventType** enumeration (e.g., `EventType.Draw`) or its corresponding string name (e.g., `"Draw"`).</ParamField>
+<ParamField path="callback" type="function" required>The Lua function to be executed when the specified event fires.</ParamField>
