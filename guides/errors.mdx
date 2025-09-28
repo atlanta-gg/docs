@@ -19,6 +19,8 @@ To resolve this issue, you must ensure the Atlanta client is always launched wit
 2.  **Right-Click Launch:** Locate the Atlanta client executable file. Right-click on it and select **"Run as administrator."**
 3.  **Permanent Fix (Optional):** To avoid this error in the future, right-click the executable, go to **Properties** -> **Compatibility** tab, and check the box that says **"Run this program as an administrator."** Click **Apply** and **OK**.
 
+---
+
 ## Anti Cheat Process Open
 
 ### Description
@@ -32,6 +34,8 @@ To proceed, you must completely close or uninstall the interfering anti-cheat so
 1.  **Identify and Close:** Close any games or applications that use a kernel-level anti-cheat.
 2.  **Task Manager Check:** Open your **Task Manager** (Ctrl+Shift+Esc) and check for known anti-cheat services running in the background.
 3.  **Disable/Uninstall:** If the AC is running as a permanent service (like Vanguard), you may need to temporarily disable or uninstall the anti-cheat software and **reboot your PC** before attempting to load the Atlanta client again.
+
+---
 
 ## Process Already Open
 
@@ -48,6 +52,8 @@ To fix this, ensure all instances of the client are completely closed:
 3.  **End Process:** Check the **Details** or **Processes** tab and forcibly end any remaining processes related to the **Atlanta client**.
 4.  **Relaunch:** Relaunch the Atlanta client.
 
+---
+
 ## Multiple Handles
 
 ### Description
@@ -62,6 +68,8 @@ To resolve this, you must ensure only one instance of the game is running:
 2.  **Task Manager Check:** Open your **Task Manager** (Ctrl+Shift+Esc).
 3.  **End Game Processes:** Navigate to the **Details** or **Processes** tab and forcibly end any remaining background processes associated with the game client executable (e.g., `RobloxPlayerBeta.exe`).
 4.  **Relaunch:** Relaunch the game and then attempt to load the Atlanta client.
+
+---
 
 ## Game Process Not Found
 
@@ -78,6 +86,8 @@ This issue is typically caused by a timing error or an incorrect game state. Ens
 1.  **Game State:** Verify that your target game is fully **open and running** *before* pressing the **Load** button in the Atlanta client.
 2.  **Loader Selection:** Double-check that you have selected the correct game profile in the loader interface.
 3.  **Relaunch Sequence:** If the error persists, completely close both the Atlanta client and the game, reboot your PC, and then attempt the load process again.
+
+---
 
 ## Permissions
 
@@ -96,6 +106,8 @@ To resolve this issue, you must force the loader to re-authenticate:
 1.  **Close Client:** Fully close the Atlanta client application.
 2.  **Relaunch and Re-authenticate:** Relaunch the Atlanta client and log in again using your correct username and password. This action will refresh the stored credentials and attempt to reconnect to the authentication server, simultaneously checking your current HWID.
 3.  **Contact Support (HWID):** If the error persists, especially after confirming correct credentials, you may need to **contact support** to request an HWID reset.
+
+---
 
 ## Bridge
 
@@ -118,6 +130,8 @@ To resolve these errors, you must disable any software or system features that i
     * **Windows Defender/Security:** Temporarily pause real-time protection.
 3.  **Check Driver Blocklist:** If the issue persists, your operating system may be using a driver blocklist policy (often enforced by strict Memory Integrity settings). You must ensure these settings are disabled and the system is rebooted.
 
+---
+
 ## Scanning
 
 This section lists all core memory scanning and initialization errors.
@@ -136,6 +150,8 @@ To resolve these errors, ensure the following steps are taken in order:
 2.  **Game Version Check:** Confirm that your target game is fully updated to the current public build.
 3.  **Channel Mismatch:** If both the client and game are updated, you may have been pushed to a non-standard or experimental game channel. To fix this, you must **revert your game client** to the known, current stable version.
 
+---
+
 ## Configuration
 
 ### Description
@@ -143,8 +159,6 @@ To resolve these errors, ensure the following steps are taken in order:
 This group of errors indicates a failure in reading, writing, or accessing essential local configuration files. This interference prevents the Atlanta client from loading, saving, or applying your user settings and theme.
 
 **Affected Modules/Files:** `Config Init`, `Config Path`, `Theme Path`, `Settings Path`, `Config File`, `Config Save`, `Config File Delete`, `Config Delete`, `Config Refresh`, `Theme File`, `Settings File`, `Bind Init`, **`Config Parse`**
-
----
 
 ### Non-Fatal Error
 
@@ -159,6 +173,8 @@ These issues are almost universally caused by external applications locking or b
 1.  **File Syncing Software:** Completely disable or temporarily pause applications like **OneDrive**, Google Drive Sync, or Dropbox that monitor the user's hard drive folders.
 2.  **Antivirus Interference:** Temporarily disable your **Antivirus** or any **Windows Security** features (like Controlled Folder Access) that might be locking the configuration directory.
 3.  **Permissions:** Ensure the Atlanta client and the game have full read/write permissions for the `C:\atlanta` folder. If necessary, delete the folder, run the client as administrator once, and allow it to recreate the file structure.
+
+---
 
 ## Overlay
 
@@ -175,6 +191,8 @@ To resolve these rendering errors, ensure your system has the necessary, up-to-d
 1.  **DirectX Installation:** Install or repair the **latest version of Microsoft DirectX** on your system.
 2.  **Visual C++ Redistributables:** Download and install the **latest Visual C++ Redistributable packages** (both x86 and x64) from the Microsoft website.
 3.  **Graphics Drivers:** Ensure your dedicated GPU drivers (NVIDIA, AMD, or Intel) are **fully updated** to the latest available version from the manufacturer's official website.
+
+---
 
 ## Miscellaneous
 
