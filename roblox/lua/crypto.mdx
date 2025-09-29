@@ -21,3 +21,94 @@ local base64_decoded_string = crypto["base64_decode"](base64_encoded_string); --
 ## Functions
 
 This section lists all available C++ functions exposed within the global **`crypto`** table. These functions provide utilities for hashing, encoding/decoding data (like Base64 and Hex), and generating cryptographic primitives.
+
+---
+
+### base64_encode
+
+Encodes a string to Base64 format. Returns the Base64-encoded string.
+
+```lua
+base64_encode(string: value): string
+```
+
+<ParamField path="value" type="string" required>The string to encode in Base64 format.</ParamField>
+
+### base64_decode
+
+Decodes a Base64-encoded string back to its original format. Returns the decoded string, or `"Unknown"` if decoding fails.
+
+```lua
+base64_decode(string: value): string
+```
+
+<ParamField path="value" type="string" required>The Base64-encoded string to decode.</ParamField>
+
+### hex_encode
+
+Encodes a string to hexadecimal format. Returns the hexadecimal-encoded string.
+
+```lua
+hex_encode(string: value): string
+```
+
+<ParamField path="value" type="string" required>The string to encode in hexadecimal format.</ParamField>
+
+### hex_decode
+
+Decodes a hexadecimal-encoded string back to its original format. Returns the decoded string, or `"Unknown"` if decoding fails.
+
+```lua
+hex_decode(string: value): string
+```
+
+<ParamField path="value" type="string" required>The hexadecimal-encoded string to decode.</ParamField>
+
+### hash_sha256
+
+Computes the SHA-256 hash of a string. Returns the hash as a string.
+
+```lua
+hash_sha256(string: value): string
+```
+
+<ParamField path="value" type="string" required>The string to hash using SHA-256.</ParamField>
+
+### hash_sha512
+
+Computes the SHA-512 hash of a string. Returns the hash as a string.
+
+```lua
+hash_sha512(string: value): string
+```
+
+<ParamField path="value" type="string" required>The string to hash using SHA-512.</ParamField>
+
+### hash_blake2b
+
+Computes the BLAKE2b hash of a string with a specified output size. Returns the hash as a string, or `"Invalid size"` if the size exceeds the maximum, or `"Unknown"` if hashing fails.
+
+```lua
+hash_blake2b(string: value, number: size): string
+```
+
+<ParamField path="value" type="string" required>The string to hash using BLAKE2b.</ParamField>
+<ParamField path="size" type="number" required>The desired output size of the hash in bytes. Must not exceed the maximum allowed size.</ParamField>
+
+### generate_key
+
+Generates a cryptographically secure random key of the specified size. Returns the generated key as a string.
+
+```lua
+generate_key(number: size): string
+```
+
+<ParamField path="size" type="number" required>The size of the key to generate in bytes.</ParamField>
+
+### generate_nonce
+
+Generates a cryptographically secure random nonce suitable for use with encryption operations. Returns the generated nonce as a string.
+
+```lua
+generate_nonce(): string
+```
