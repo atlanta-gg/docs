@@ -21,3 +21,135 @@ local input_mouse_location = input["get_mouse_location"](); -- Bracket Operator
 ## Functions
 
 This section lists all available C++ functions exposed within the global **`input`** table. These functions are used to simulate and manage system-level interactions, including mouse movement, button clicks, and keyboard key presses.
+
+---
+
+### mouse_left_press
+
+Presses the left mouse button down without releasing it.
+
+```lua
+mouse_left_press(): void
+```
+
+---
+
+### mouse_left_release
+
+Releases the left mouse button.
+
+```lua
+mouse_left_release(): void
+```
+
+---
+
+### mouse_left_click
+
+Performs a full left mouse button click (press and release).
+
+```lua
+mouse_left_click(): void
+```
+
+---
+
+### mouse_right_press
+
+Presses the right mouse button down without releasing it.
+
+```lua
+mouse_right_press(): void
+```
+
+---
+
+### mouse_right_release
+
+Releases the right mouse button.
+
+```lua
+mouse_right_release(): void
+```
+
+---
+
+### mouse_right_click
+
+Performs a full right mouse button click (press and release).
+
+```lua
+mouse_right_click(): void
+```
+
+---
+
+### mouse_move_relative
+
+Moves the mouse cursor relative to its current position.
+
+```lua
+mouse_move_relative(number: x, number: y): void
+```
+
+<ParamField path="x" type="number" required>The horizontal distance to move the cursor in pixels.</ParamField>
+<ParamField path="y" type="number" required>The vertical distance to move the cursor in pixels.</ParamField>
+
+### mouse_move_absolute
+
+Moves the mouse cursor to an absolute position on the screen.
+
+```lua
+mouse_move_absolute(number: x, number: y): void
+```
+
+<ParamField path="x" type="number" required>The absolute X coordinate on the screen.</ParamField>
+<ParamField path="y" type="number" required>The absolute Y coordinate on the screen.</ParamField>
+
+### mouse_scroll
+
+Scrolls the mouse wheel by the specified value.
+
+```lua
+mouse_scroll(number: value): void
+```
+
+<ParamField path="value" type="number" required>The scroll amount. Positive values scroll up, negative values scroll down.</ParamField>
+
+### key_press
+
+Presses a keyboard key down without releasing it.
+
+```lua
+key_press(number: key): void
+```
+
+<ParamField path="key" type="number" required>The virtual key code of the key to press.</ParamField>
+
+### key_release
+
+Releases a keyboard key.
+
+```lua
+key_release(number: key): void
+```
+
+<ParamField path="key" type="number" required>The virtual key code of the key to release.</ParamField>
+
+### key_click
+
+Performs a full keyboard key click (press and release).
+
+```lua
+key_click(number: key): void
+```
+
+<ParamField path="key" type="number" required>The virtual key code of the key to click.</ParamField>
+
+### get_mouse_location
+
+Gets the current mouse cursor position on the screen. Returns a Vector2 containing the X and Y coordinates.
+
+```lua
+get_mouse_location(): Vector2
+```
