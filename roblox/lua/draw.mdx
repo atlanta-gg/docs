@@ -30,7 +30,9 @@ This section lists all available C++ functions exposed within the global **`draw
 
 Draws a line between two points defined by a Rect.
 
-line(Rect: rect, Color4: color, number?: thickness)
+```lua
+line(Rect: rect, Color4: color, number?: thickness): void
+```
 
 <ParamField path="rect" type="Rect" required>The Rect defining the line's start (low) and end (high) points.</ParamField>
 <ParamField path="color" type="Color4" required>The color of the line.</ParamField>
@@ -40,7 +42,9 @@ line(Rect: rect, Color4: color, number?: thickness)
 
 Draws a rectangle outline.
 
-rect(Rect: rect, Color4: color, number?: rounding, number?: thickness)
+```lua
+rect(Rect: rect, Color4: color, number?: rounding, number?: thickness): void
+```
 
 <ParamField path="rect" type="Rect" required>The Rect defining the rectangle's position and size.</ParamField>
 <ParamField path="color" type="Color4" required>The color of the rectangle outline.</ParamField>
@@ -51,7 +55,9 @@ rect(Rect: rect, Color4: color, number?: rounding, number?: thickness)
 
 Draws a filled rectangle.
 
-rect_filled(Rect: rect, Color4: color, number?: rounding)
+```lua
+rect_filled(Rect: rect, Color4: color, number?: rounding): void
+```
 
 <ParamField path="rect" type="Rect" required>The Rect defining the rectangle's position and size.</ParamField>
 <ParamField path="color" type="Color4" required>The fill color of the rectangle.</ParamField>
@@ -61,7 +67,9 @@ rect_filled(Rect: rect, Color4: color, number?: rounding)
 
 Draws a filled rectangle with a gradient.
 
-rect_gradient(Rect: rect, Color4: top, Color4: bottom, boolean?: inverse)
+```lua
+rect_gradient(Rect: rect, Color4: top, Color4: bottom, boolean?: inverse): void
+```
 
 <ParamField path="rect" type="Rect" required>The Rect defining the rectangle's position and size.</ParamField>
 <ParamField path="top" type="Color4" required>The color at the top of the gradient.</ParamField>
@@ -72,7 +80,9 @@ rect_gradient(Rect: rect, Color4: top, Color4: bottom, boolean?: inverse)
 
 Draws a quadrilateral outline defined by four points.
 
-quad(Vector2: p1, Vector2: p2, Vector2: p3, Vector2: p4, Color4: color, number?: thickness)
+```lua
+quad(Vector2: p1, Vector2: p2, Vector2: p3, Vector2: p4, Color4: color, number?: thickness): void
+```
 
 <ParamField path="p1" type="Vector2" required>The first corner point of the quadrilateral.</ParamField>
 <ParamField path="p2" type="Vector2" required>The second corner point of the quadrilateral.</ParamField>
@@ -85,7 +95,9 @@ quad(Vector2: p1, Vector2: p2, Vector2: p3, Vector2: p4, Color4: color, number?:
 
 Draws a filled quadrilateral defined by four points.
 
-quad_filled(Vector2: p1, Vector2: p2, Vector2: p3, Vector2: p4, Color4: color)
+```lua
+quad_filled(Vector2: p1, Vector2: p2, Vector2: p3, Vector2: p4, Color4: color): void
+```
 
 <ParamField path="p1" type="Vector2" required>The first corner point of the quadrilateral.</ParamField>
 <ParamField path="p2" type="Vector2" required>The second corner point of the quadrilateral.</ParamField>
@@ -97,7 +109,9 @@ quad_filled(Vector2: p1, Vector2: p2, Vector2: p3, Vector2: p4, Color4: color)
 
 Draws a triangle outline defined by three points.
 
-triangle(Vector2: p1, Vector2: p2, Vector2: p3, Color4: color, number?: thickness)
+```lua
+triangle(Vector2: p1, Vector2: p2, Vector2: p3, Color4: color, number?: thickness): void
+```
 
 <ParamField path="p1" type="Vector2" required>The first corner point of the triangle.</ParamField>
 <ParamField path="p2" type="Vector2" required>The second corner point of the triangle.</ParamField>
@@ -109,7 +123,9 @@ triangle(Vector2: p1, Vector2: p2, Vector2: p3, Color4: color, number?: thicknes
 
 Draws a filled triangle defined by three points.
 
-triangle_filled(Vector2: p1, Vector2: p2, Vector2: p3, Color4: color)
+```lua
+triangle_filled(Vector2: p1, Vector2: p2, Vector2: p3, Color4: color): void
+```
 
 <ParamField path="p1" type="Vector2" required>The first corner point of the triangle.</ParamField>
 <ParamField path="p2" type="Vector2" required>The second corner point of the triangle.</ParamField>
@@ -120,7 +136,9 @@ triangle_filled(Vector2: p1, Vector2: p2, Vector2: p3, Color4: color)
 
 Draws a circle outline.
 
-circle(Vector2: pos, Color4: color, number: radius, number?: segments, number?: thickness)
+```lua
+circle(Vector2: pos, Color4: color, number: radius, number?: segments, number?: thickness): void
+```
 
 <ParamField path="pos" type="Vector2" required>The center position of the circle.</ParamField>
 <ParamField path="color" type="Color4" required>The color of the circle outline.</ParamField>
@@ -132,7 +150,9 @@ circle(Vector2: pos, Color4: color, number: radius, number?: segments, number?: 
 
 Draws a filled circle.
 
-circle_filled(Vector2: pos, Color4: color, number: radius, number?: segments)
+```lua
+circle_filled(Vector2: pos, Color4: color, number: radius, number?: segments): void
+```
 
 <ParamField path="pos" type="Vector2" required>The center position of the circle.</ParamField>
 <ParamField path="color" type="Color4" required>The fill color of the circle.</ParamField>
@@ -143,7 +163,9 @@ circle_filled(Vector2: pos, Color4: color, number: radius, number?: segments)
 
 Draws text at the specified position.
 
-text(Vector2: pos, Color4: color, string: text, number?: font, number?: font_size, number?: outline, Color4?: outline_color)
+```lua
+text(Vector2: pos, Color4: color, string: text, number?: font, number?: font_size, number?: outline, Color4?: outline_color): void
+```
 
 <ParamField path="pos" type="Vector2" required>The position where the text will be drawn.</ParamField>
 <ParamField path="color" type="Color4" required>The color of the text.</ParamField>
@@ -157,7 +179,9 @@ text(Vector2: pos, Color4: color, string: text, number?: font, number?: font_siz
 
 Calculates and returns the size of text as it would be rendered. Returns a Vector2 containing the width and height of the text.
 
+```lua
 text_size(string: text, number?: font, number?: font_size): Vector2
+```
 
 <ParamField path="text" type="string" required>The text string to measure.</ParamField>
 <ParamField path="font" type="number">The font identifier. Defaults to `0` (default font).</ParamField>
