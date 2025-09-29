@@ -21,3 +21,133 @@ utils["set_clipboard"](";-;"); -- Bracket Operator
 ## Functions
 
 This section lists all available C++ functions exposed within the global **`utils`** table. These functions provide general-purpose utilities, including debugging output, system information retrieval, and clipboard manipulation.
+
+---
+
+### print
+
+Prints a message to the console output.
+
+```lua
+print(...): void
+```
+
+<ParamField path="..." type="variadic" required>The values to print. Accepts multiple arguments of any type.</ParamField>
+
+### warn
+
+Prints a warning message to the console output.
+
+```lua
+warn(...): void
+```
+
+<ParamField path="..." type="variadic" required>The values to print as a warning. Accepts multiple arguments of any type.</ParamField>
+
+### error
+
+Prints an error message to the console output.
+
+```lua
+error(...): void
+```
+
+<ParamField path="..." type="variadic" required>The values to print as an error. Accepts multiple arguments of any type.</ParamField>
+
+### info
+
+Prints an informational message to the console output.
+
+```lua
+info(...): void
+```
+
+<ParamField path="..." type="variadic" required>The values to print as information. Accepts multiple arguments of any type.</ParamField>
+
+### set_clipboard
+
+Sets the system clipboard text to the specified string.
+
+```lua
+set_clipboard(string: text): void
+```
+
+<ParamField path="text" type="string" required>The text to copy to the clipboard.</ParamField>
+
+### get_process_id
+
+Gets the current process ID. Returns the process ID as a number.
+
+```lua
+get_process_id(): number
+```
+
+---
+
+### get_delta
+
+Gets the delta time (time elapsed since the last frame). Returns the delta time in seconds as a number.
+
+```lua
+get_delta(): number
+```
+
+---
+
+### get_window_position
+
+Gets the current window position on the screen. Returns a Vector2 containing the X and Y coordinates.
+
+```lua
+get_window_position(): Vector2
+```
+
+---
+
+### get_window_size
+
+Gets the current window size. Returns a Vector2 containing the width and height.
+
+```lua
+get_window_size(): Vector2
+```
+
+---
+
+### get_window_rect
+
+Gets the current window rectangle (position and size). Returns a Rect containing the window bounds.
+
+```lua
+get_window_rect(): Rect
+```
+
+---
+
+### get_running
+
+Checks if the application is currently running. Returns `true` if running, `false` otherwise.
+
+```lua
+get_running(): boolean
+```
+
+---
+
+### get_focused
+
+Checks if the window is currently focused. Returns `true` if focused, `false` otherwise.
+
+```lua
+get_focused(): boolean
+```
+
+---
+
+### get_open
+
+Checks if the window is currently open. Returns `true` if open, `false` otherwise.
+
+```lua
+get_open(): boolean
+```
