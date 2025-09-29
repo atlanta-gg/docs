@@ -7,6 +7,10 @@ icon: "feather"
 
 ---
 
+<Danger>Many functions within the `cheat` table are designed to operate exclusively on a specific class of game instance (e.g., `set_ambience` only works on a **`Lighting`** instance). You are responsible for ensuring that the instance you pass as an argument is of the correct class type *before* calling the function. Passing an incorrect instance type will lead to undefined behavior, errors, or application crashes.</Danger>
+
+---
+
 ## Access
 
 All cheat C++ functions are exposed to your Lua script via a single global table named **`cheat`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
