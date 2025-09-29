@@ -18,7 +18,13 @@ local visuals_global_type = GlobalType["Visuals"]; -- Bracket Operator
 
 ---
 
-## EventType
+## Members
+
+This section lists all globally defined **Enumeration tables** (Enums). These tables provide readable names for numerical constants, allowing you to access a constant value by using the Enum's global name followed by its member name (e.g., `EventType.Draw`).
+
+---
+
+### EventType
 
 This enumeration lists the available event triggers that scripts can register functions to handle using the **`event.set`** function.
 
@@ -29,7 +35,7 @@ This enumeration lists the available event triggers that scripts can register fu
 <ParamField path="Leave" type="number"> Triggered when a registered entry has left the game.</ParamField>
 <ParamField path="Unload" type="number"> Triggered when all scripts or the software is unloaded.</ParamField>
 
-## GlobalType
+### GlobalType
 
 This enumeration lists the available global section types that you can use with the **`menu.set_global`** and **`menu.get_global`** functions.
 
@@ -44,7 +50,7 @@ This enumeration lists the available global section types that you can use with 
 <ParamField path="Style" type="number"> The style section used for storing the Style window globals.</ParamField>
 <ParamField path="Settings" type="number"> The settings section used for storing the Config window globals.</ParamField>
 
-## ModelFlags
+### ModelFlags
 
 This enumeration defines various binary flags used to represent the current state or properties of a ModelObject for checking in Lua scripts. These flags can be checked against a ModelObject's Flags property using the bitwise AND operator (`&`).
 
@@ -57,7 +63,7 @@ This enumeration defines various binary flags used to represent the current stat
 <ParamField path="Tool" type="number"> Flag indicating that the model is currently holding a tool.</ParamField>
 <ParamField path="Void" type="number"> Flag indicating that the model is outside of the Workspace service (Primitive Nulled out).</ParamField>
 
-## EntryExclude
+### EntryExclude
 
 This enumeration defines flags used to specify which types of entries should be excluded or filtered when retrieving the entry list.
 

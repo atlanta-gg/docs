@@ -18,7 +18,13 @@ local entry_client_object = entry["get"](entry_client_instance); -- Bracket Oper
 
 ---
 
-## valid
+## Functions
+
+This section lists all available C++ functions exposed within the global **`entry`** table. These functions are used for retrieving, managing, and validating references to game entries and other in game instances.
+
+---
+
+### valid
 
 Checks if the provided Entry object is currently valid and active (not in a removal state).
 
@@ -29,7 +35,7 @@ valid(EntryObject*: entry, bool?: model): bool
 <ParamField path="entry" type="EntryObject*" required> The **EntryObject** instance (shared pointer) to be validated.</ParamField>
 <ParamField path="model" type="boolean"> If `true`, the function performs an additional check to ensure the entry has a valid **ModelObject**. Defaults to `false`.</ParamField>
 
-## list
+### list
 
 Retrieves a Lua table containing the currently active list of Entry objects. The list can be filtered based on the optional exclusion flags.
 
@@ -39,7 +45,7 @@ list(EntryExclude?: exclude): table<EntryObject*>
 
 <ParamField path="exclude" type="EntryExclude">A flag from the **EntryExclude** enumeration specifying which types of entries should be filtered out. Defaults to `EntryExclude.None` (no filtering).</ParamField>
 
-## get
+### get
 
 Retrieves a specific EntryObject instance based on its player object address.
 
@@ -49,7 +55,7 @@ get(number: address): EntryObject*
 
 <ParamField path="address" type="number" required>The player object number address of the EntryObject to retrieve.</ParamField>
 
-## get_root
+### get_root
 
 Retrieves the root PartObject associated with a given entrie's player object address.
 
@@ -58,8 +64,8 @@ get_root(number: address): PartObject*
 ```
 
 <ParamField path="address" type="number" required>The player object number address of the entry whose root object is requested.</ParamField>
-gi
-## get_client_instance
+
+### get_client_instance
 
 Returns the local client's player instance address.
 
@@ -69,7 +75,7 @@ get_client_instance(): EntryObject*
 
 ---
 
-## get_client_team
+### get_client_team
 
 Returns the local client's team instance address.
 
@@ -79,7 +85,7 @@ get_client_team(): number
 
 ---
 
-## get_tick_count
+### get_tick_count
 
 Returns the current entry thread tick count.
 
@@ -89,7 +95,7 @@ get_tick_count(): number
 
 ---
 
-## get_model_tick_count
+### get_model_tick_count
 
 Returns the current model thread tick count.
 
@@ -99,7 +105,7 @@ get_model_tick_count(): number
 
 ---
 
-## get_entry_count
+### get_entry_count
 
 Returns the total number of entries currently loaded in the game environment.
 

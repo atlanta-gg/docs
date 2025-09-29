@@ -18,7 +18,13 @@ local menu_item = menu["get_item"]("toggle_global_key"); -- Bracket Operator
 
 ---
 
-## add_label
+## Functions
+
+This section lists all available C++ functions exposed within the global **`menu`** table. These functions allow you to register new widgets (labels, toggles, sliders, etc.), retrieve configuration values, and directly manipulate the user interface elements.
+
+---
+
+### add_label
 
 Registers a non-interactive label or section divider in the menu. Returns a boolean indicating the success of the item creation.
 
@@ -29,7 +35,7 @@ add_label(string: name, boolean: safe?): boolean
 <ParamField path="name" type="string" required>The text to display for the label.</ParamField>
 <ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
 
-## add_toggle
+### add_toggle
 
 Registers an interactive toggle switch widget in the menu. Returns a boolean indicating the success of the item creation.
 
@@ -42,7 +48,7 @@ add_toggle(string: name, string: key, boolean?: default, boolean?: safe): boolea
 <ParamField path="default" type="boolean">The **default value** (initial state) for the toggle. Defaults to `false`.</ParamField>
 <ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
 
-## add_slider_int
+### add_slider_int
 
 Registers an interactive slider widget that allows selecting an integer value within a defined range. Returns a boolean indicating the success of the item creation.
 
@@ -57,7 +63,7 @@ add_slider_int(string: name, string: key, number?: default, number?: min, number
 <ParamField path="max" type="number">The maximum value the slider can be set to. Defaults to `100`.</ParamField>
 <ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
 
-## add_slider_float
+### add_slider_float
 
 Registers an interactive slider widget that allows selecting an floating-point value within a defined range. Returns a boolean indicating the success of the item creation.
 
@@ -72,7 +78,7 @@ add_slider_float(string: name, string: key, number?: default, number?: min, numb
 <ParamField path="max" type="number">The maximum value the slider can be set to. Defaults to `100`.</ParamField>
 <ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
 
-## add_single_combo
+### add_single_combo
 
 Registers a single combo box widget that allows selecting a **single item** from a list of strings. Returns a boolean indicating the success of the item creation.
 
@@ -86,7 +92,7 @@ add_single_combo(string: name, string: key, number?: default, table?: items, boo
 <ParamField path="items" type="table">A Lua table (list) of strings defining the selectable options (e.g., `{"Option A", "Option B"}`). Defaults to an empty list.</ParamField>
 <ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
 
-## add_multi_combo
+### add_multi_combo
 
 Registers a multi combo box widget that allows the user to select **multiple items** from a list of strings. Returns a boolean indicating the success of the item creation.
 
@@ -100,7 +106,7 @@ add_multi_combo(string: name, string: key, table?: default, table?: items, boole
 <ParamField path="items" type="table">A Lua table (list) of strings defining the selectable options (e.g., `{"Option A", "Option B"}`). Defaults to an empty list.</ParamField>
 <ParamField path="safe" type="boolean">The safe status for the widget. If `false`, the widget will be hidden when **Hide Unsafe** is enabled. Defaults to `true`.</ParamField>
 
-## add_colorpicker
+### add_colorpicker
 
 Registers a color picker widget that allows the user to choose an RGBA color. Returns a boolean indicating the success of the item creation.
 
@@ -114,7 +120,7 @@ add_colorpicker(string: name, string: key, Color4?: default, boolean?: alpha, bo
 <ParamField path="alpha" type="boolean">If `true`, the color picker will include an Alpha (transparency) slider. Defaults to `true`.</ParamField>
 <ParamField path="inlayed" type="boolean">If `true`, the color picker will be inlayed further down below the last widget. Defaults to `false`.</ParamField>
 
-## get_item
+### get_item
 
 Get the value of a specific script configuration value.
 
@@ -124,7 +130,7 @@ get_item(string: key): any
 
 <ParamField path="key" type="string" required>The unique string key of the configuration to get the value from.</ParamField>
 
-## set_item
+### set_item
 
 Set the value of a specific script configuration value. Returns a boolean indicating the success of the set.
 
@@ -135,7 +141,7 @@ set_item(string: key, any: value): boolean
 <ParamField path="key" type="string" required>The unique string key of the configuration to set the value for.</ParamField>
 <ParamField path="value" type="any" required>The new value to assign to the configuration. The value type must match the type of the configuration.</ParamField>
 
-## get_global
+### get_global
 
 Get the value of a specific global configuration value.
 
@@ -146,7 +152,7 @@ get_global(GlobalType: global, string: key): any
 <ParamField path="global" type="GlobalType" required>The global section to get the configuration value from.</ParamField>
 <ParamField path="key" type="string" required>The unique string key of the configuration to get the value from.</ParamField>
 
-## set_global
+### set_global
 
 Set the value of a specific global configuration value. Returns a boolean indicating the success of the set.
 
