@@ -7,6 +7,10 @@ icon: "binary"
 
 ---
 
+<Danger>Please ensure you have verified that both the **memory address** and the **value** you are reading or writing are correct. Improper use of these memory functions can lead to corrupted data, process crashes, or other unexpected and potentially unstable behavior within the targeted application. Use these functions only if you know exactly what you are doing.</Danger>
+
+---
+
 ## Access
 
 All memory C++ functions are exposed to your Lua script via a single global table named **`memory`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.

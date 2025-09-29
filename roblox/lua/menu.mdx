@@ -7,6 +7,10 @@ icon: "menu"
 
 ---
 
+<Warning>Functions within the `menu` table (e.g., `menu.add_toggle()`, `menu.add_slider()`) are **static registration calls** used to define the user interface layout. You **must not** call these functions inside frequently executed events (like `EventType.Draw` or `EventType.Tick`). They should only be called once, at the very beginning of your script's execution (on initialization or setup), to prevent instability and incorrect menu state.</Warning>
+
+---
+
 ## Access
 
 All menu C++ functions are exposed to your Lua script via a single global table named **`menu`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.

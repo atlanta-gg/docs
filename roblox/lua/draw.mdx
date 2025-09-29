@@ -7,6 +7,10 @@ icon: "pencil"
 
 ---
 
+<Warning>You **must** call all functions within the `draw` table (e.g., `draw.rect_filled()`, `draw.text()`) exclusively inside an **`EventType.Draw`** callback function registered with the `event` module. Calling draw functions from any other event or context will result in an immediate error.</Warning>
+
+---
+
 ## Access
 
 All draw C++ functions are exposed to your Lua script via a single global table named **`draw`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
