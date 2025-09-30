@@ -66,7 +66,8 @@ Gets the current Visual Engine address. Returns the memory address as a number.
 ```lua
 get_engine(): number
 ```
---
+
+---
 
 ### get_service
 
@@ -177,3 +178,44 @@ set_sky_state(number: address, boolean: value)
 
 <ParamField path="address" type="number" required>The Render View instance address.</ParamField>
 <ParamField path="value" type="boolean" required>The sky state value. Set to `false` to trigger sky updates.</ParamField>
+
+### set_fflag
+
+Sets a Fast Flag (FFlag) value by name. Returns `true` if the flag was successfully set, `false` otherwise.
+
+```lua
+set_fflag(string: name, boolean | number: value): boolean
+```
+
+<ParamField path="name" type="string" required>The name of the Fast Flag to set.</ParamField>
+<ParamField path="value" type="boolean | number" required>The value to set the flag to. Accepts boolean or number types. String support coming in the future.</ParamField>
+
+### get_class
+
+Gets the class name of an Instance. Returns the class name as a string.
+
+```lua
+get_class(number: address): string
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the class name from.</ParamField>
+
+### get_parent
+
+Gets the parent Instance of an Instance. Returns the parent Instance address as a number.
+
+```lua
+get_parent(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the parent from.</ParamField>
+
+### get_name
+
+Gets the name of an Instance. Returns the name as a string.
+
+```lua
+get_name(number: address): string
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the name from.</ParamField>
