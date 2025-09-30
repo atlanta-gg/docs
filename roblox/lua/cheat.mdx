@@ -25,3 +25,113 @@ cheat["set_field_of_view"](camera, 20); -- Bracket Operator
 ## Functions
 
 This section lists all available C++ functions exposed within the global **`cheat`** table. These functions provide high-level manipulation and access to environment, game state, and object properties.
+
+---
+
+### world_to_point
+
+Converts a 3D world position to a 2D screen point. Returns a Point containing the screen position and offscreen state.
+
+```lua
+world_to_point(Vector3: value, boolean?: offscreen): Point
+```
+
+<ParamField path="value" type="Vector3" required>The 3D world position to convert to screen coordinates.</ParamField>
+<ParamField path="offscreen" type="boolean">Whether to calculate the position when it's offscreen. If `false`, returns a Point with `visible` set to `false` when offscreen without calculating the actual position. Defaults to `false`.</ParamField>
+
+### get_data_model
+
+Gets the current DataModel instance address. Returns the memory address as a number.
+
+```lua
+get_data_model(): number
+```
+
+---
+
+### get_render_view
+
+Gets the current RenderView address. Returns the memory address as a number.
+
+```lua
+get_render_view(): number
+```
+
+---
+
+### get_engine
+
+Gets the current Visual Engine address. Returns the memory address as a number.
+
+```lua
+get_engine(): number
+```
+--
+
+### get_service
+
+Gets a service from the service list by name. Returns the memory address as a number.
+
+```lua
+get_service(string: name): number
+```
+
+<ParamField path="name" type="string" required>The name of the service to retrieve (e.g., `"Players"`, `"UserInputService"`).</ParamField>
+
+### get_workspace
+
+Gets the current Workspace instance address. Returns the memory address as a number.
+
+```lua
+get_workspace(): number
+```
+
+---
+
+### get_game_id
+
+Gets the current game's game ID. Returns the game ID as a number.
+
+```lua
+get_game_id(number: address): number
+```
+
+<ParamField path="address" type="number" required>The DataModel instance address.</ParamField>
+
+### get_place_id
+
+Gets the current game's place ID. Returns the place ID as a number.
+
+```lua
+get_place_id(number: address): number
+```
+
+<ParamField path="address" type="number" required>The DataModel instance address.</ParamField>
+
+### get_tick
+
+Gets the current game's tick count. Returns the tick count as a number.
+
+```lua
+get_tick(number: address): number
+```
+
+<ParamField path="address" type="number" required>The DataModel instance address.</ParamField>
+
+### get_job_id
+
+Gets the current game's job ID. Returns the job ID as a string. Can be called with a DataModel address or without arguments to retrieve the cached job ID.
+
+```lua
+get_job_id(number?: address): string
+```
+
+<ParamField path="address" type="number">The DataModel instance address. If not provided, returns the cached job ID.</ParamField>
+
+### get_version
+
+Gets the target process's current version. Returns the version string.
+
+```lua
+get_version(): string
+```
