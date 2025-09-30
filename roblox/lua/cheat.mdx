@@ -190,6 +190,10 @@ set_fflag(string: name, boolean | number: value): boolean
 <ParamField path="name" type="string" required>The name of the Fast Flag to set.</ParamField>
 <ParamField path="value" type="boolean | number" required>The value to set the flag to. Accepts boolean or number types. String support coming in the future.</ParamField>
 
+<Tip>For rapid identification, reading an instance's **Class Name** (`get_class`) is highly recommended over reading its user-defined Name (`get_name`). `get_class` requires only **one low-level memory read** per instance, offering significantly better performance and should be the preferred method for filtering and iteration in your scripts.</Tip>
+
+---
+
 ### get_class
 
 Gets the class name of an Instance. Returns the class name as a string.
