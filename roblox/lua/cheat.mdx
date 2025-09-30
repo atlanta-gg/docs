@@ -51,7 +51,7 @@ get_data_model(): number
 
 ### get_render_view
 
-Gets the current RenderView address. Returns the memory address as a number.
+Gets the current Render View address. Returns the memory address as a number.
 
 ```lua
 get_render_view(): number
@@ -135,3 +135,45 @@ Gets the target process's current version. Returns the version string.
 ```lua
 get_version(): string
 ```
+
+### get_time
+
+Gets the current time from the Visual Engine. Returns the time as a number.
+
+```lua
+get_time(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Visual Engine address.</ParamField>
+
+### get_matrix
+
+Gets the view matrix from the Visual Engine. Returns a Matrix4 containing the current view transformation.
+
+```lua
+get_matrix(number: address): Matrix4
+```
+
+<ParamField path="address" type="number" required>The Visual Engine address.</ParamField>
+
+### set_lighting_state
+
+Sets the lighting update state for the Render View. Controls whether lighting, sky, or both are updated.
+
+```lua
+set_lighting_state(number: address, number: value)
+```
+
+<ParamField path="address" type="number" required>The Render View instance address.</ParamField>
+<ParamField path="value" type="number" required>The lighting state value: `0x0` for both lighting and sky updates, `0x100` for sky updates only, or `0x1` for lighting updates only.</ParamField>
+
+### set_sky_state
+
+Sets the sky update state for the Render View. Should be called after writing to skybox along with `set_lighting_state`.
+
+```lua
+set_sky_state(number: address, boolean: value)
+```
+
+<ParamField path="address" type="number" required>The Render View instance address.</ParamField>
+<ParamField path="value" type="boolean" required>The sky state value. Set to `false` to trigger sky updates.</ParamField>
