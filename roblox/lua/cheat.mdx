@@ -222,3 +222,182 @@ get_name(number: address): string
 ```
 
 <ParamField path="address" type="number" required>The Instance address to get the name from.</ParamField>
+
+### get_children
+
+Gets the children of an Instance. Returns the children as a table.
+
+```lua
+get_children(number: address, number?: amount): table
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the children from.</ParamField>
+<ParamField path="amount" type="number">The amount of children to get. Defaults to `0` aka infinite.</ParamField>
+
+### get_children_last
+
+Gets the last children of an Instance. Returns the children as a table.
+
+```lua
+get_children_last(number: address, number?: amount): table
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the children from.</ParamField>
+<ParamField path="amount" type="number">The amount of children to get. Defaults to `0` aka infinite.</ParamField>
+
+### get_children_name
+
+Gets the children of an Instance with a specific name. Returns the children as a table.
+
+```lua
+get_children_name(number: address, string: name): table
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the children from.</ParamField>
+<ParamField path="name" type="string" required>The specific name to look for in the children.</ParamField>
+
+### get_child
+
+Gets the first child of an Instance. Returns the child as a number.
+
+```lua
+get_child(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the child from.</ParamField>
+
+### get_last_child
+
+Gets the last child of an Instance. Returns the child as a number.
+
+```lua
+get_last_child(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the child from.</ParamField>
+
+### get_both_children
+
+Gets both first and last children of an Instance. Returns the children as a table.
+
+```lua
+get_both_children(number: address): table
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the children from.</ParamField>
+
+### find_first_child
+
+Gets the first child of an Instance with a specific name. Returns the instance as a number.
+
+```lua
+find_first_child(number: address, string: name): number
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the instance from.</ParamField>
+<ParamField path="name" type="string" required>The specific name to look for in the children.</ParamField>
+
+### find_first_class
+
+Gets the first child of an Instance with a specific class name. Returns the instance as a number.
+
+```lua
+find_first_class(number: address, string: name): number
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the instance from.</ParamField>
+<ParamField path="name" type="string" required>The specific class name to look for in the children.</ParamField>
+
+### find_last_child
+
+Gets the last child of an Instance with a specific name. Returns the instance as a number.
+
+```lua
+find_last_child(number: address, string: name, number?: amount): number
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the instance from.</ParamField>
+<ParamField path="name" type="string" required>The specific name to look for in the children.</ParamField>
+<ParamField path="amount" type="number">The amount of children to get. Defaults to `100`.</ParamField>
+
+### has_children
+
+Checks if an Instance has any children. Returns `true` if it has any children, `false` otherwise.
+
+```lua
+has_children(number: address): boolean
+```
+
+<ParamField path="address" type="number" required>The Instance address to check if it has children from.</ParamField>
+
+### get_attributes
+
+Gets the attributes of an Instance. Returns the parsed attributes as a table.
+
+```lua
+get_attributes(number: address): table
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the attributes from.</ParamField>
+
+### get_attribute
+
+Gets the attribute with of an Instance with a specific name. Returns the parsed attribute as a ParsedAttribute.
+
+```lua
+get_attribute(number: address, string: name): ParsedAttribute
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the attribute from.</ParamField>
+<ParamField path="name" type="string" required>The specific name to look for in the attributes.</ParamField>
+
+### is_base_part
+
+Checks if an class name is a base part. Returns `true` if it is a base part, `false` otherwise.
+
+```lua
+is_base_part(string: name): boolean
+```
+
+<ParamField path="name" type="string" required>The class name to check if it is a base part.</ParamField>
+
+### is_gui_object
+
+Checks if an class name is a gui object. Returns `true` if it is a gui object, `false` otherwise.
+
+```lua
+is_gui_object(string: name): boolean
+```
+
+<ParamField path="name" type="string" required>The class name to check if it is a gui object.</ParamField>
+
+### set_parent
+
+Sets the parent Instance of an Instance.
+
+```lua
+set_parent(number: address, number: value): void
+```
+
+<ParamField path="value" type="number" required>The Instance parent value to set.</ParamField>
+
+### get_camera
+
+Gets the current camera instance. Returns the camera as a number. Can be called with a Workspace address or without arguments to retrieve the cached camera.
+
+```lua
+get_camera(number?: address): number
+```
+
+<ParamField path="address" type="number">The Workspace instance address. If not provided, returns the cached current camera.</ParamField>
+
+### get_terrain
+
+Gets the terrain instance. Returns the terrain as a number. Can be called with a Workspace address or without arguments to retrieve the cached terrain.
+
+```lua
+get_terrain(number?: address): number
+```
+
+<ParamField path="address" type="number">The Workspace instance address. If not provided, returns the cached terrain.</ParamField>
+
