@@ -7,9 +7,9 @@ icon: "feather"
 
 ---
 
-<Danger>Many functions within the `cheat` table are designed to operate exclusively on a specific class of game instance (e.g., `set_ambient` only works on a **`Lighting`** instance). You are responsible for ensuring that the instance you pass as an argument is of the correct class type *before* calling the function. Passing an incorrect instance type will lead to undefined behavior, errors, or application crashes.</Danger>
+<Danger>Many functions within the `cheat` table are designed to operate exclusively on a specific class of game Instance (e.g., `set_ambient` only works on a **`Lighting`** Instance). You are responsible for ensuring that the Instance you pass as an argument is of the correct class type *before* calling the function. Passing an incorrect Instance type will lead to undefined behavior, errors, or application crashes.</Danger>
 
-<Tip>For rapid identification, reading an instance's **Class Name** (`get_class`) is highly recommended over reading its user-defined Name (`get_name`). `get_class` requires only **one low-level memory read** per instance, offering significantly better performance and should be the preferred method for filtering and iteration in your scripts.</Tip>
+<Tip>For rapid identification, reading an Instance's **Class Name** (`get_class`) is highly recommended over reading its user-defined Name (`get_name`). `get_class` requires only **one low-level memory read** per Instance, offering significantly better performance and should be the preferred method for filtering and iteration in your scripts.</Tip>
 
 
 ---
@@ -19,7 +19,7 @@ icon: "feather"
 All cheat C++ functions are exposed to your Lua script via a single global table named **`cheat`**. You access individual values by using the dot (`.`) or bracket (`[]`) operator on this table.
 
 ```lua Cheat Usage Example
-local instance_name = cheat.get_name(instance); -- Dot Operator
+local Instance_name = cheat.get_name(Instance); -- Dot Operator
 cheat["set_field_of_view"](camera, 20); -- Bracket Operator
 ```
 
@@ -56,7 +56,7 @@ This section contains **fundamental system functions** used to retrieve the base
 
 #### get_data_model
 
-Gets the current DataModel instance address. Returns the memory address as a number.
+Gets the current DataModel Instance address. Returns the memory address as a number.
 
 ```lua
 get_data_model(): number
@@ -86,7 +86,7 @@ get_engine(): number
 
 ### DataModel
 
-This section lists methods that operate directly on the core **DataModel instance**. These functions are essential for traversing the game hierarchy, retrieving key services, and accessing global game identification details.
+This section lists methods that operate directly on the core **DataModel Instance**. These functions are essential for traversing the game hierarchy, retrieving key services, and accessing global game identification details.
 
 ---
 
@@ -102,7 +102,7 @@ get_service(string: name): number
 
 #### get_workspace
 
-Gets the current Workspace instance address. Returns the memory address as a number.
+Gets the current Workspace Instance address. Returns the memory address as a number.
 
 ```lua
 get_workspace(): number
@@ -118,7 +118,7 @@ Gets the current game's game ID. Returns the game ID as a number.
 get_game_id(number: address): number
 ```
 
-<ParamField path="address" type="number" required>The DataModel instance address.</ParamField>
+<ParamField path="address" type="number" required>The DataModel Instance address.</ParamField>
 
 #### get_place_id
 
@@ -128,7 +128,7 @@ Gets the current game's place ID. Returns the place ID as a number.
 get_place_id(number: address): number
 ```
 
-<ParamField path="address" type="number" required>The DataModel instance address.</ParamField>
+<ParamField path="address" type="number" required>The DataModel Instance address.</ParamField>
 
 #### get_tick
 
@@ -138,7 +138,7 @@ Gets the current game's tick count. Returns the tick count as a number.
 get_tick(number: address): number
 ```
 
-<ParamField path="address" type="number" required>The DataModel instance address.</ParamField>
+<ParamField path="address" type="number" required>The DataModel Instance address.</ParamField>
 
 #### get_job_id
 
@@ -148,7 +148,7 @@ Gets the current game's job ID. Returns the job ID as a string. Can be called wi
 get_job_id(number?: address): string
 ```
 
-<ParamField path="address" type="number">The DataModel instance address. If not provided, returns the cached job ID.</ParamField>
+<ParamField path="address" type="number">The DataModel Instance address. If not provided, returns the cached job ID.</ParamField>
 
 #### get_version
 
@@ -194,7 +194,7 @@ Sets the lighting update state for the Render View. Controls whether lighting, s
 set_lighting_state(number: address, number: value)
 ```
 
-<ParamField path="address" type="number" required>The Render View instance address.</ParamField>
+<ParamField path="address" type="number" required>The Render View Instance address.</ParamField>
 <ParamField path="value" type="number" required>The lighting state value: `0x0` for both lighting and sky updates, `0x100` for sky updates only, or `0x1` for lighting updates only.</ParamField>
 
 #### set_sky_state
@@ -205,7 +205,7 @@ Sets the sky update state for the Render View. Should be called after writing to
 set_sky_state(number: address, boolean: value)
 ```
 
-<ParamField path="address" type="number" required>The Render View instance address.</ParamField>
+<ParamField path="address" type="number" required>The Render View Instance address.</ParamField>
 <ParamField path="value" type="boolean" required>The sky state value. Set to `false` to trigger sky updates.</ParamField>
 
 ### FFlags
@@ -326,35 +326,35 @@ get_both_children(number: address): table
 
 #### find_first_child
 
-Gets the first child of an Instance with a specific name. Returns the instance as a number.
+Gets the first child of an Instance with a specific name. Returns the Instance as a number.
 
 ```lua
 find_first_child(number: address, string: name): number
 ```
 
-<ParamField path="address" type="number" required>The Instance address to get the instance from.</ParamField>
+<ParamField path="address" type="number" required>The Instance address to get the Instance from.</ParamField>
 <ParamField path="name" type="string" required>The specific name to look for in the children.</ParamField>
 
 #### find_first_class
 
-Gets the first child of an Instance with a specific class name. Returns the instance as a number.
+Gets the first child of an Instance with a specific class name. Returns the Instance as a number.
 
 ```lua
 find_first_class(number: address, string: name): number
 ```
 
-<ParamField path="address" type="number" required>The Instance address to get the instance from.</ParamField>
+<ParamField path="address" type="number" required>The Instance address to get the Instance from.</ParamField>
 <ParamField path="name" type="string" required>The specific class name to look for in the children.</ParamField>
 
 #### find_last_child
 
-Gets the last child of an Instance with a specific name. Returns the instance as a number.
+Gets the last child of an Instance with a specific name. Returns the Instance as a number.
 
 ```lua
 find_last_child(number: address, string: name, number?: amount): number
 ```
 
-<ParamField path="address" type="number" required>The Instance address to get the instance from.</ParamField>
+<ParamField path="address" type="number" required>The Instance address to get the Instance from.</ParamField>
 <ParamField path="name" type="string" required>The specific name to look for in the children.</ParamField>
 <ParamField path="amount" type="number">The amount of children to get. Defaults to `100`.</ParamField>
 
@@ -419,28 +419,139 @@ set_parent(number: address, number: value): void
 
 <ParamField path="value" type="number" required>The Instance parent value to set.</ParamField>
 
+### Workspace
+
+This section provides methods for **inspecting, traversing, and manipulating** the properties and children specifically contained within the core **`Workspace`** Instance of the game environment.
+
+---
+
 #### get_camera
 
-Gets the current camera instance. Returns the camera as a number. Can be called with a Workspace address or without arguments to retrieve the cached camera.
+Gets the current camera Instance. Returns the camera as a number. Can be called with a Workspace address or without arguments to retrieve the cached camera.
 
 ```lua
 get_camera(number?: address): number
 ```
 
-<ParamField path="address" type="number">The Workspace instance address. If not provided, returns the cached current camera.</ParamField>
-
-### Workspace
-
-This section provides methods for **inspecting, traversing, and manipulating** the properties and children specifically contained within the core **`Workspace`** instance of the game environment.
-
----
+<ParamField path="address" type="number">The Workspace Instance address. If not provided, returns the cached current camera.</ParamField>
 
 #### get_terrain
 
-Gets the terrain instance. Returns the terrain as a number. Can be called with a Workspace address or without arguments to retrieve the cached terrain.
+Gets the terrain Instance. Returns the terrain as a number. Can be called with a Workspace address or without arguments to retrieve the cached terrain.
 
 ```lua
 get_terrain(number?: address): number
 ```
 
-<ParamField path="address" type="number">The Workspace instance address. If not provided, returns the cached terrain.</ParamField>
+<ParamField path="address" type="number">The Workspace Instance address. If not provided, returns the cached terrain.</ParamField>
+
+### Camera
+
+This section provides methods for **inspecting and manipulating** the **`Camera`** Instance's properties, including its position, orientation, field of view, and various movement behaviors.
+
+---
+
+#### get_camera_subject
+
+Gets the current camera subject Instance of the Camera Instance. Returns the camera subject Instance address as a number.
+
+```lua
+get_camera_subject(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
+
+#### get_camera_rotation
+
+Gets the rotation matrix of the Camera Instance. Returns a Matrix3 containing the camera's rotation.
+
+```lua
+get_camera_rotation(number: address): Matrix3
+```
+
+<ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
+
+#### get_camera_translation
+
+Gets the translation (position) of the Camera Instance. Returns a Vector3 containing the camera's position.
+
+```lua
+get_camera_translation(number: address): Vector3
+```
+
+<ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
+
+#### get_camera_cframe
+
+Gets the CFrame (coordinate frame) of the Camera Instance. Returns a CFrame containing the camera's position and orientation.
+
+```lua
+get_camera_cframe(number: address): CFrame
+```
+
+<ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
+
+#### get_field_of_view
+
+Gets the field of view of the Camera Instance. Returns the field of view in degrees as a number.
+
+```lua
+get_field_of_view(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
+
+#### set_camera_subject
+
+Sets the camera subject Instance of the Camera Instance.
+
+```lua
+set_camera_subject(number: address, number: value)
+```
+
+<ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
+<ParamField path="value" type="number" required>The Instance address to set as the camera subject.</ParamField>
+
+#### set_camera_rotation
+
+Sets the rotation matrix of the Camera Instance.
+
+```lua
+set_camera_rotation(number: address, Matrix3: value)
+```
+
+<ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
+<ParamField path="value" type="Matrix3" required>The rotation matrix to set for the camera.</ParamField>
+
+#### set_camera_translation
+
+Sets the translation (position) of the Camera Instance.
+
+```lua
+set_camera_translation(number: address, Vector3: value)
+```
+
+<ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
+<ParamField path="value" type="Vector3" required>The position vector to set for the camera.</ParamField>
+
+#### set_camera_cframe
+
+Sets the CFrame (coordinate frame) of the Camera Instance.
+
+```lua
+set_camera_cframe(number: address, CFrame: value)
+```
+
+<ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
+<ParamField path="value" type="CFrame" required>The CFrame to set for the camera's position and orientation.</ParamField>
+
+#### set_field_of_view
+
+Sets the field of view of the Camera Instance.
+
+```lua
+set_field_of_view(number: address, number: value)
+```
+
+<ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
+<ParamField path="value" type="number" required>The field of view in degrees to set for the camera.</ParamField>
