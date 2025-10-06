@@ -555,3 +555,135 @@ set_field_of_view(number: address, number: value)
 
 <ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
 <ParamField path="value" type="number" required>The field of view in degrees to set for the camera.</ParamField>
+
+### Terrain
+
+This section provides methods for **inspecting and manipulating** various environmental and rendering properties of the **`Terrain`** instance, including water color, reflection, wave dynamics, and decorative element sizes.
+
+---
+
+#### get_water_color
+
+Gets the water color of the Terrain Instance. Returns a Color3 containing the water color.
+
+```lua
+get_water_color(number: address): Color3
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+
+#### get_grass_size
+
+Gets the grass size of the Terrain Instance. Returns the grass size as a number.
+
+```lua
+get_grass_size(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+
+#### get_water_reflect
+
+Gets the water reflectance of the Terrain Instance. Returns the reflectance value as a number.
+
+```lua
+get_water_reflect(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+
+#### get_wave_size
+
+Gets the water wave size of the Terrain Instance. Returns the wave size as a number.
+
+```lua
+get_wave_size(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+
+#### get_wave_speed
+
+Gets the water wave speed of the Terrain Instance. Returns the wave speed as a number.
+
+```lua
+get_wave_speed(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+
+#### get_decoration
+
+Gets the decoration state of the Terrain Instance. Returns `true` if decoration (grass) is enabled, `false` otherwise.
+
+```lua
+get_decoration(number: address): boolean
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+
+#### set_water_color
+
+Sets the water color of the Terrain Instance.
+
+```lua
+set_water_color(number: address, Color3: value)
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+<ParamField path="value" type="Color3" required>The Color3 value to set for the water color.</ParamField>
+
+#### set_grass_size
+
+Sets the grass size of the Terrain Instance.
+
+```lua
+set_grass_size(number: address, number: value)
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+<ParamField path="value" type="number" required>The grass size to set.</ParamField>
+
+#### set_water_reflect
+
+Sets the water reflectance of the Terrain Instance.
+
+```lua
+set_water_reflect(number: address, number: value)
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+<ParamField path="value" type="number" required>The reflectance value to set for the water.</ParamField>
+
+#### set_wave_size
+
+Sets the water wave size of the Terrain Instance.
+
+```lua
+set_wave_size(number: address, number: value)
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+<ParamField path="value" type="number" required>The wave size to set for the water.</ParamField>
+
+#### set_wave_speed
+
+Sets the water wave speed of the Terrain Instance.
+
+```lua
+set_wave_speed(number: address, number: value)
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+<ParamField path="value" type="number" required>The wave speed to set for the water.</ParamField>
+
+#### set_decoration
+
+Sets the decoration state of the Terrain Instance. When set to `false`, grass will be disabled.
+
+```lua
+set_decoration(number: address, boolean: value)
+```
+
+<ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
+<ParamField path="value" type="boolean" required>Set to `true` to enable decoration (grass), `false` to disable it.</ParamField>
