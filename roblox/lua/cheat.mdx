@@ -191,7 +191,7 @@ get_matrix(number: address): Matrix4
 Sets the lighting update state for the Render View. Controls whether lighting, sky, or both are updated.
 
 ```lua
-set_lighting_state(number: address, number: value)
+set_lighting_state(number: address, number: value): void
 ```
 
 <ParamField path="address" type="number" required>The Render View Instance address.</ParamField>
@@ -202,7 +202,7 @@ set_lighting_state(number: address, number: value)
 Sets the sky update state for the Render View. Should be called after writing to skybox along with `set_lighting_state`.
 
 ```lua
-set_sky_state(number: address, boolean: value)
+set_sky_state(number: address, boolean: value): void
 ```
 
 <ParamField path="address" type="number" required>The Render View Instance address.</ParamField>
@@ -506,7 +506,7 @@ get_field_of_view(number: address): number
 Sets the camera subject Instance of the Camera Instance.
 
 ```lua
-set_camera_subject(number: address, number: value)
+set_camera_subject(number: address, number: value): void
 ```
 
 <ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
@@ -517,7 +517,7 @@ set_camera_subject(number: address, number: value)
 Sets the rotation matrix of the Camera Instance.
 
 ```lua
-set_camera_rotation(number: address, Matrix3: value)
+set_camera_rotation(number: address, Matrix3: value): void
 ```
 
 <ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
@@ -528,7 +528,7 @@ set_camera_rotation(number: address, Matrix3: value)
 Sets the translation (position) of the Camera Instance.
 
 ```lua
-set_camera_translation(number: address, Vector3: value)
+set_camera_translation(number: address, Vector3: value): void
 ```
 
 <ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
@@ -539,7 +539,7 @@ set_camera_translation(number: address, Vector3: value)
 Sets the CFrame (coordinate frame) of the Camera Instance.
 
 ```lua
-set_camera_cframe(number: address, CFrame: value)
+set_camera_cframe(number: address, CFrame: value): void
 ```
 
 <ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
@@ -550,7 +550,7 @@ set_camera_cframe(number: address, CFrame: value)
 Sets the field of view of the Camera Instance.
 
 ```lua
-set_field_of_view(number: address, number: value)
+set_field_of_view(number: address, number: value): void
 ```
 
 <ParamField path="address" type="number" required>The Camera Instance address.</ParamField>
@@ -627,7 +627,7 @@ get_decoration(number: address): boolean
 Sets the water color of the Terrain Instance.
 
 ```lua
-set_water_color(number: address, Color3: value)
+set_water_color(number: address, Color3: value): void
 ```
 
 <ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
@@ -638,7 +638,7 @@ set_water_color(number: address, Color3: value)
 Sets the grass size of the Terrain Instance.
 
 ```lua
-set_grass_size(number: address, number: value)
+set_grass_size(number: address, number: value): void
 ```
 
 <ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
@@ -649,7 +649,7 @@ set_grass_size(number: address, number: value)
 Sets the water reflectance of the Terrain Instance.
 
 ```lua
-set_water_reflect(number: address, number: value)
+set_water_reflect(number: address, number: value): void
 ```
 
 <ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
@@ -660,7 +660,7 @@ set_water_reflect(number: address, number: value)
 Sets the water wave size of the Terrain Instance.
 
 ```lua
-set_wave_size(number: address, number: value)
+set_wave_size(number: address, number: value): void
 ```
 
 <ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
@@ -671,7 +671,7 @@ set_wave_size(number: address, number: value)
 Sets the water wave speed of the Terrain Instance.
 
 ```lua
-set_wave_speed(number: address, number: value)
+set_wave_speed(number: address, number: value): void
 ```
 
 <ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
@@ -682,7 +682,7 @@ set_wave_speed(number: address, number: value)
 Sets the decoration state of the Terrain Instance. When set to `false`, grass will be disabled.
 
 ```lua
-set_decoration(number: address, boolean: value)
+set_decoration(number: address, boolean: value): void
 ```
 
 <ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
@@ -724,7 +724,9 @@ This section provides methods for **inspecting and manipulating** the **`Lightin
 
 Gets the ambient lighting color of the Lighting Instance. Returns a Color3 containing the ambient color.
 
+```lua
 get_ambient(number: address): Color3
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -732,7 +734,9 @@ get_ambient(number: address): Color3
 
 Gets the color shift for the bottom of the skybox in the Lighting Instance. Returns a Color3 containing the bottom shift color.
 
+```lua
 get_shift_bottom(number: address): Color3
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -740,7 +744,9 @@ get_shift_bottom(number: address): Color3
 
 Gets the color shift for the top of the skybox in the Lighting Instance. Returns a Color3 containing the top shift color.
 
+```lua
 get_shift_top(number: address): Color3
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -748,7 +754,9 @@ get_shift_top(number: address): Color3
 
 Gets the fog color of the Lighting Instance. Returns a Color3 containing the fog color.
 
+```lua
 get_fog_color(number: address): Color3
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -756,7 +764,9 @@ get_fog_color(number: address): Color3
 
 Gets the outdoor ambient lighting color of the Lighting Instance. Returns a Color3 containing the outdoor ambient color.
 
+```lua
 get_outdoor_ambient(number: address): Color3
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -764,7 +774,9 @@ get_outdoor_ambient(number: address): Color3
 
 Gets the brightness level of the Lighting Instance. Returns the brightness as a number.
 
+```lua
 get_brightness(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -772,7 +784,9 @@ get_brightness(number: address): number
 
 Gets the diffuse scale of the Lighting Instance. Returns the diffuse scale as a number.
 
+```lua
 get_diffuse_scale(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -780,7 +794,9 @@ get_diffuse_scale(number: address): number
 
 Gets the specular scale of the Lighting Instance. Returns the specular scale as a number.
 
+```lua
 get_specular_scale(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -788,7 +804,9 @@ get_specular_scale(number: address): number
 
 Gets the exposure level of the Lighting Instance. Returns the exposure as a number.
 
+```lua
 get_exposure(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -796,7 +814,9 @@ get_exposure(number: address): number
 
 Gets the fog end distance of the Lighting Instance. Returns the fog end distance as a number.
 
+```lua
 get_fog_end(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -804,7 +824,9 @@ get_fog_end(number: address): number
 
 Gets the fog start distance of the Lighting Instance. Returns the fog start distance as a number.
 
+```lua
 get_fog_start(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -812,7 +834,9 @@ get_fog_start(number: address): number
 
 Gets the shadow softness of the Lighting Instance. Returns the shadow softness as a number.
 
+```lua
 get_shadow_softness(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -820,7 +844,9 @@ get_shadow_softness(number: address): number
 
 Gets the rendering technology mode of the Lighting Instance. Returns the technology mode as a number.
 
+```lua
 get_technology(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -828,7 +854,9 @@ get_technology(number: address): number
 
 Gets the global shadows state of the Lighting Instance. Returns `true` if global shadows are enabled, `false` otherwise.
 
+```lua
 get_global_shadows(number: address): boolean
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -836,7 +864,9 @@ get_global_shadows(number: address): boolean
 
 Gets the color tint of the Lighting Instance. Returns a Color3 containing the tint color.
 
+```lua
 get_tint(number: address): Color3
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -844,7 +874,9 @@ get_tint(number: address): Color3
 
 Gets the light direction of the Lighting Instance. Returns the direction as a number.
 
+```lua
 get_direction(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -852,7 +884,9 @@ get_direction(number: address): number
 
 Gets the Sky Instance from the Lighting Instance. Returns the Sky Instance address as a number.
 
+```lua
 get_sky(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -860,7 +894,9 @@ get_sky(number: address): number
 
 Gets the Atmosphere Instance from the Lighting Instance. Returns the Atmosphere Instance address as a number.
 
+```lua
 get_atmosphere(number: address): number
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 
@@ -868,7 +904,9 @@ get_atmosphere(number: address): number
 
 Sets the ambient lighting color of the Lighting Instance.
 
-set_ambient(number: address, Color3: value)
+```lua
+set_ambient(number: address, Color3: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="Color3" required>The Color3 value to set for the ambient color.</ParamField>
@@ -877,7 +915,9 @@ set_ambient(number: address, Color3: value)
 
 Sets the color shift for the bottom of the skybox in the Lighting Instance.
 
-set_shift_bottom(number: address, Color3: value)
+```lua
+set_shift_bottom(number: address, Color3: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="Color3" required>The Color3 value to set for the bottom shift color.</ParamField>
@@ -886,7 +926,9 @@ set_shift_bottom(number: address, Color3: value)
 
 Sets the color shift for the top of the skybox in the Lighting Instance.
 
-set_shift_top(number: address, Color3: value)
+```lua
+set_shift_top(number: address, Color3: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="Color3" required>The Color3 value to set for the top shift color.</ParamField>
@@ -895,7 +937,9 @@ set_shift_top(number: address, Color3: value)
 
 Sets the fog color of the Lighting Instance.
 
-set_fog_color(number: address, Color3: value)
+```lua
+set_fog_color(number: address, Color3: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="Color3" required>The Color3 value to set for the fog color.</ParamField>
@@ -904,7 +948,9 @@ set_fog_color(number: address, Color3: value)
 
 Sets the outdoor ambient lighting color of the Lighting Instance.
 
-set_outdoor_ambient(number: address, Color3: value)
+```lua
+set_outdoor_ambient(number: address, Color3: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="Color3" required>The Color3 value to set for the outdoor ambient color.</ParamField>
@@ -913,7 +959,9 @@ set_outdoor_ambient(number: address, Color3: value)
 
 Sets the brightness level of the Lighting Instance.
 
-set_brightness(number: address, number: value)
+```lua
+set_brightness(number: address, number: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="number" required>The brightness value to set.</ParamField>
@@ -922,7 +970,9 @@ set_brightness(number: address, number: value)
 
 Sets the diffuse scale of the Lighting Instance.
 
-set_diffuse_scale(number: address, number: value)
+```lua
+set_diffuse_scale(number: address, number: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="number" required>The diffuse scale value to set.</ParamField>
@@ -931,7 +981,9 @@ set_diffuse_scale(number: address, number: value)
 
 Sets the specular scale of the Lighting Instance.
 
-set_specular_scale(number: address, number: value)
+```lua
+set_specular_scale(number: address, number: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="number" required>The specular scale value to set.</ParamField>
@@ -940,7 +992,9 @@ set_specular_scale(number: address, number: value)
 
 Sets the exposure level of the Lighting Instance.
 
-set_exposure(number: address, number: value)
+```lua
+set_exposure(number: address, number: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="number" required>The exposure value to set.</ParamField>
@@ -949,7 +1003,9 @@ set_exposure(number: address, number: value)
 
 Sets the fog end distance of the Lighting Instance.
 
-set_fog_end(number: address, number: value)
+```lua
+set_fog_end(number: address, number: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="number" required>The fog end distance to set.</ParamField>
@@ -958,7 +1014,9 @@ set_fog_end(number: address, number: value)
 
 Sets the fog start distance of the Lighting Instance.
 
-set_fog_start(number: address, number: value)
+```lua
+set_fog_start(number: address, number: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="number" required>The fog start distance to set.</ParamField>
@@ -967,7 +1025,9 @@ set_fog_start(number: address, number: value)
 
 Sets the shadow softness of the Lighting Instance.
 
-set_shadow_softness(number: address, number: value)
+```lua
+set_shadow_softness(number: address, number: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="number" required>The shadow softness value to set.</ParamField>
@@ -976,7 +1036,9 @@ set_shadow_softness(number: address, number: value)
 
 Sets the rendering technology mode of the Lighting Instance.
 
-set_technology(number: address, number: value)
+```lua
+set_technology(number: address, number: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="number" required>The technology mode value to set.</ParamField>
@@ -985,7 +1047,9 @@ set_technology(number: address, number: value)
 
 Sets the global shadows state of the Lighting Instance.
 
-set_global_shadows(number: address, boolean: value)
+```lua
+set_global_shadows(number: address, boolean: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="boolean" required>Set to `true` to enable global shadows, `false` to disable them.</ParamField>
@@ -994,7 +1058,9 @@ set_global_shadows(number: address, boolean: value)
 
 Sets the color tint of the Lighting Instance.
 
-set_tint(number: address, Color3: value)
+```lua
+set_tint(number: address, Color3: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="Color3" required>The Color3 value to set for the tint color.</ParamField>
@@ -1003,7 +1069,179 @@ set_tint(number: address, Color3: value)
 
 Sets the light direction of the Lighting Instance.
 
-set_direction(number: address, number: value)
+```lua
+set_direction(number: address, number: value): void
+```
 
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="number" required>The direction value to set.</ParamField>
+
+### Player
+
+This section provides methods for **inspecting and manipulating** individual **`Player`** instances. These functions allow access to player-specific details such as their display name, team, user ID, account age, character instance, and client properties like camera zoom and idle time.
+
+---
+
+#### get_display
+
+Gets the display name of the Player Instance. Returns the display name as a string.
+
+```lua
+get_display(number: address): string
+```
+
+<ParamField path="address" type="number" required>The Player Instance address.</ParamField>
+
+#### get_team
+
+Gets the Team Instance that the Player belongs to. Returns the Team Instance address as a number.
+
+```lua
+get_team(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Player Instance address.</ParamField>
+
+#### get_user_id
+
+Gets the user ID of the Player Instance. Returns the user ID as a number.
+
+```lua
+get_user_id(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Player Instance address.</ParamField>
+
+#### get_account_age
+
+Gets the account age (in days) of the Player Instance. Returns the account age as a number.
+
+```lua
+get_account_age(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Player Instance address.</ParamField>
+
+#### get_camera_zoom
+
+Gets the camera zoom settings of the local Player Instance. Returns a table containing the camera zoom configuration. This function only works for the local player.
+
+```lua
+get_camera_zoom(number: address): table
+```
+
+<ParamField path="address" type="number" required>The local Player Instance address.</ParamField>
+
+#### get_character
+
+Gets the Character model Instance of the Player. Returns the Character Instance address as a number.
+
+```lua
+get_character(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Player Instance address.</ParamField>
+
+#### get_idle_time
+
+Gets the idle time (in seconds) of the local Player Instance. Returns the idle time as a number. This function only works for the local player.
+
+```lua
+get_idle_time(number: address): number
+```
+
+<ParamField path="address" type="number" required>The local Player Instance address.</ParamField>
+
+#### set_camera_zoom
+
+Sets the camera zoom settings of the local Player Instance. This function only works for the local player.
+
+```lua
+set_camera_zoom(number: address, table: value): void
+```
+
+<ParamField path="address" type="number" required>The local Player Instance address.</ParamField>
+<ParamField path="value" type="table" required>A table containing the camera zoom configuration to set.</ParamField>
+
+#### set_idle_time
+
+Sets the idle time (in seconds) of the local Player Instance. This function only works for the local player.
+
+```lua
+set_idle_time(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The local Player Instance address.</ParamField>
+<ParamField path="value" type="number" required>The idle time in seconds to set.</ParamField>
+
+### Team
+
+This section provides methods for **inspecting and manipulating** individual **`Team`** instances, including properties like color and name.
+
+---
+
+#### get_team_color
+
+Gets the BrickColor team color ID of the Team Instance. Returns the BrickColor ID as a number. Use `fromBrickColor` on a Color3 or Color4 to convert this to a Color value.
+
+```lua
+get_team_color(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Team Instance address.</ParamField>
+
+### Model
+
+This section provides a method for **inspecting** the **`Model`** instance to retrieve a reference to its designated primary or root part.
+
+---
+
+#### get_primary_part
+
+Gets the PrimaryPart BasePart Instance of the Model Instance. Returns the PrimaryPart Instance address as a number.
+
+```lua
+get_primary_part(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Model Instance address.</ParamField>
+
+### BasePart
+
+This section provides methods for **inspecting and manipulating** properties common to all **`BasePart`** derivatives (e.g., `Part`, `MeshPart`, `UnionOperation`). These functions control aspects like transparency, retrieving primitive, and visual appearance.
+
+---
+
+#### get_transparency
+
+Gets the transparency value of the BasePart Instance. Returns the transparency as a number (0 is fully opaque, 1 is fully transparent).
+
+```lua
+get_transparency(number: address): number
+```
+
+<ParamField path="address" type="number" required>The BasePart Instance address.</ParamField>
+
+---
+
+#### get_primitive
+
+Gets the Primitive Class of the BasePart. Returns the Primitive Class address as a number.
+
+```lua
+get_primitive(number: address): number
+```
+
+<ParamField path="address" type="number" required>The BasePart Instance address.</ParamField>
+
+---
+
+#### get_part_color
+
+Gets the color of the BasePart Instance. Returns a Color3 containing the part's color.
+
+```lua
+get_part_color(number: address): Color3
+```
+
+<ParamField path="address" type="number" required>The BasePart Instance address.</ParamField>
