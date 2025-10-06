@@ -31,7 +31,13 @@ This section lists all available C++ functions exposed within the global **`chea
 
 ---
 
-### world_to_point
+### Misc
+
+This section contains miscellaneous utility functions, primarily for coordinate system conversions like transforming 3D world coordinates to 2D screen points.
+
+---
+
+#### world_to_point
 
 Converts a 3D world position to a 2D screen point. Returns a Point containing the screen position and offscreen state.
 
@@ -42,7 +48,13 @@ world_to_point(Vector3: value, boolean?: offscreen): Point
 <ParamField path="value" type="Vector3" required>The 3D world position to convert to screen coordinates.</ParamField>
 <ParamField path="offscreen" type="boolean">Whether to calculate the position when it's offscreen. If `false`, returns a Point with `visible` set to `false` when offscreen without calculating the actual position. Defaults to `false`.</ParamField>
 
-### get_data_model
+### Base
+
+This section contains **fundamental system functions** used to retrieve the base memory addresses (e.g., `DataModel`, `Visual Engine`) required for the initialization and operation of most other high-level `cheat` functions.
+
+---
+
+#### get_data_model
 
 Gets the current DataModel instance address. Returns the memory address as a number.
 
@@ -52,7 +64,7 @@ get_data_model(): number
 
 ---
 
-### get_render_view
+#### get_render_view
 
 Gets the current Render View address. Returns the memory address as a number.
 
@@ -62,7 +74,7 @@ get_render_view(): number
 
 ---
 
-### get_engine
+#### get_engine
 
 Gets the current Visual Engine address. Returns the memory address as a number.
 
@@ -72,7 +84,13 @@ get_engine(): number
 
 ---
 
-### get_service
+### DataModel
+
+This section lists methods that operate directly on the core **DataModel instance**. These functions are essential for traversing the game hierarchy, retrieving key services, and accessing global game identification details.
+
+---
+
+#### get_service
 
 Gets a service from the service list by name. Returns the memory address as a number.
 
@@ -82,7 +100,7 @@ get_service(string: name): number
 
 <ParamField path="name" type="string" required>The name of the service to retrieve (e.g., `"Players"`, `"UserInputService"`).</ParamField>
 
-### get_workspace
+#### get_workspace
 
 Gets the current Workspace instance address. Returns the memory address as a number.
 
@@ -92,7 +110,7 @@ get_workspace(): number
 
 ---
 
-### get_game_id
+#### get_game_id
 
 Gets the current game's game ID. Returns the game ID as a number.
 
@@ -102,7 +120,7 @@ get_game_id(number: address): number
 
 <ParamField path="address" type="number" required>The DataModel instance address.</ParamField>
 
-### get_place_id
+#### get_place_id
 
 Gets the current game's place ID. Returns the place ID as a number.
 
@@ -112,7 +130,7 @@ get_place_id(number: address): number
 
 <ParamField path="address" type="number" required>The DataModel instance address.</ParamField>
 
-### get_tick
+#### get_tick
 
 Gets the current game's tick count. Returns the tick count as a number.
 
@@ -122,7 +140,7 @@ get_tick(number: address): number
 
 <ParamField path="address" type="number" required>The DataModel instance address.</ParamField>
 
-### get_job_id
+#### get_job_id
 
 Gets the current game's job ID. Returns the job ID as a string. Can be called with a DataModel address or without arguments to retrieve the cached job ID.
 
@@ -132,7 +150,7 @@ get_job_id(number?: address): string
 
 <ParamField path="address" type="number">The DataModel instance address. If not provided, returns the cached job ID.</ParamField>
 
-### get_version
+#### get_version
 
 Gets the target process's current version. Returns the version string.
 
@@ -140,7 +158,15 @@ Gets the target process's current version. Returns the version string.
 get_version(): string
 ```
 
-### get_time
+---
+
+### Engine
+
+This section lists methods that operate on the **Visual Engine** and **Render View** memory structures. These functions are critical for manipulating low-level rendering properties, such as controlling lighting updates, accessing the current view matrix, and retrieving the in-game time.
+
+---
+
+#### get_time
 
 Gets the current time from the Visual Engine. Returns the time as a number.
 
@@ -150,7 +176,7 @@ get_time(number: address): number
 
 <ParamField path="address" type="number" required>The Visual Engine address.</ParamField>
 
-### get_matrix
+#### get_matrix
 
 Gets the view matrix from the Visual Engine. Returns a Matrix4 containing the current view transformation.
 
@@ -160,7 +186,7 @@ get_matrix(number: address): Matrix4
 
 <ParamField path="address" type="number" required>The Visual Engine address.</ParamField>
 
-### set_lighting_state
+#### set_lighting_state
 
 Sets the lighting update state for the Render View. Controls whether lighting, sky, or both are updated.
 
@@ -171,7 +197,7 @@ set_lighting_state(number: address, number: value)
 <ParamField path="address" type="number" required>The Render View instance address.</ParamField>
 <ParamField path="value" type="number" required>The lighting state value: `0x0` for both lighting and sky updates, `0x100` for sky updates only, or `0x1` for lighting updates only.</ParamField>
 
-### set_sky_state
+#### set_sky_state
 
 Sets the sky update state for the Render View. Should be called after writing to skybox along with `set_lighting_state`.
 
@@ -182,7 +208,13 @@ set_sky_state(number: address, boolean: value)
 <ParamField path="address" type="number" required>The Render View instance address.</ParamField>
 <ParamField path="value" type="boolean" required>The sky state value. Set to `false` to trigger sky updates.</ParamField>
 
-### set_fflag
+### FFlags
+
+This section lists methods specifically for interacting with **Fast Flags (FFlags)**. These functions allow you to dynamically read and write internal, experimental, or configuration variables used by the game engine to control features and behavior at runtime.
+
+---
+
+#### set_fflag
 
 Sets a Fast Flag (FFlag) value by name. Returns `true` if the flag was successfully set, `false` otherwise.
 
@@ -193,7 +225,13 @@ set_fflag(string: name, boolean | number: value): boolean
 <ParamField path="name" type="string" required>The name of the Fast Flag to set.</ParamField>
 <ParamField path="value" type="boolean | number" required>The value to set the flag to. Accepts boolean or number types. String support coming in the future.</ParamField>
 
-### get_class
+### Instance
+
+This section provides methods for **inspecting, traversing, and manipulating** any valid Instance within the DataModel hierarchy, including retrieving, setting, and validating its core properties.
+
+---
+
+#### get_class
 
 Gets the class name of an Instance. Returns the class name as a string.
 
@@ -203,7 +241,7 @@ get_class(number: address): string
 
 <ParamField path="address" type="number" required>The Instance address to get the class name from.</ParamField>
 
-### get_parent
+#### get_parent
 
 Gets the parent Instance of an Instance. Returns the parent Instance address as a number.
 
@@ -213,7 +251,7 @@ get_parent(number: address): number
 
 <ParamField path="address" type="number" required>The Instance address to get the parent from.</ParamField>
 
-### get_name
+#### get_name
 
 Gets the name of an Instance. Returns the name as a string.
 
@@ -223,7 +261,7 @@ get_name(number: address): string
 
 <ParamField path="address" type="number" required>The Instance address to get the name from.</ParamField>
 
-### get_children
+#### get_children
 
 Gets the children of an Instance. Returns the children as a table.
 
@@ -234,7 +272,7 @@ get_children(number: address, number?: amount): table
 <ParamField path="address" type="number" required>The Instance address to get the children from.</ParamField>
 <ParamField path="amount" type="number">The amount of children to get. Defaults to `0` aka infinite.</ParamField>
 
-### get_children_last
+#### get_children_last
 
 Gets the last children of an Instance. Returns the children as a table.
 
@@ -245,7 +283,7 @@ get_children_last(number: address, number?: amount): table
 <ParamField path="address" type="number" required>The Instance address to get the children from.</ParamField>
 <ParamField path="amount" type="number">The amount of children to get. Defaults to `0` aka infinite.</ParamField>
 
-### get_children_name
+#### get_children_name
 
 Gets the children of an Instance with a specific name. Returns the children as a table.
 
@@ -256,7 +294,7 @@ get_children_name(number: address, string: name): table
 <ParamField path="address" type="number" required>The Instance address to get the children from.</ParamField>
 <ParamField path="name" type="string" required>The specific name to look for in the children.</ParamField>
 
-### get_child
+#### get_child
 
 Gets the first child of an Instance. Returns the child as a number.
 
@@ -266,7 +304,7 @@ get_child(number: address): number
 
 <ParamField path="address" type="number" required>The Instance address to get the child from.</ParamField>
 
-### get_last_child
+#### get_last_child
 
 Gets the last child of an Instance. Returns the child as a number.
 
@@ -276,7 +314,7 @@ get_last_child(number: address): number
 
 <ParamField path="address" type="number" required>The Instance address to get the child from.</ParamField>
 
-### get_both_children
+#### get_both_children
 
 Gets both first and last children of an Instance. Returns the children as a table.
 
@@ -286,7 +324,7 @@ get_both_children(number: address): table
 
 <ParamField path="address" type="number" required>The Instance address to get the children from.</ParamField>
 
-### find_first_child
+#### find_first_child
 
 Gets the first child of an Instance with a specific name. Returns the instance as a number.
 
@@ -297,7 +335,7 @@ find_first_child(number: address, string: name): number
 <ParamField path="address" type="number" required>The Instance address to get the instance from.</ParamField>
 <ParamField path="name" type="string" required>The specific name to look for in the children.</ParamField>
 
-### find_first_class
+#### find_first_class
 
 Gets the first child of an Instance with a specific class name. Returns the instance as a number.
 
@@ -308,7 +346,7 @@ find_first_class(number: address, string: name): number
 <ParamField path="address" type="number" required>The Instance address to get the instance from.</ParamField>
 <ParamField path="name" type="string" required>The specific class name to look for in the children.</ParamField>
 
-### find_last_child
+#### find_last_child
 
 Gets the last child of an Instance with a specific name. Returns the instance as a number.
 
@@ -320,7 +358,7 @@ find_last_child(number: address, string: name, number?: amount): number
 <ParamField path="name" type="string" required>The specific name to look for in the children.</ParamField>
 <ParamField path="amount" type="number">The amount of children to get. Defaults to `100`.</ParamField>
 
-### has_children
+#### has_children
 
 Checks if an Instance has any children. Returns `true` if it has any children, `false` otherwise.
 
@@ -330,7 +368,7 @@ has_children(number: address): boolean
 
 <ParamField path="address" type="number" required>The Instance address to check if it has children from.</ParamField>
 
-### get_attributes
+#### get_attributes
 
 Gets the attributes of an Instance. Returns the parsed attributes as a table.
 
@@ -340,7 +378,7 @@ get_attributes(number: address): table
 
 <ParamField path="address" type="number" required>The Instance address to get the attributes from.</ParamField>
 
-### get_attribute
+#### get_attribute
 
 Gets the attribute with of an Instance with a specific name. Returns the parsed attribute as a ParsedAttribute.
 
@@ -351,7 +389,7 @@ get_attribute(number: address, string: name): ParsedAttribute
 <ParamField path="address" type="number" required>The Instance address to get the attribute from.</ParamField>
 <ParamField path="name" type="string" required>The specific name to look for in the attributes.</ParamField>
 
-### is_base_part
+#### is_base_part
 
 Checks if an class name is a base part. Returns `true` if it is a base part, `false` otherwise.
 
@@ -361,7 +399,7 @@ is_base_part(string: name): boolean
 
 <ParamField path="name" type="string" required>The class name to check if it is a base part.</ParamField>
 
-### is_gui_object
+#### is_gui_object
 
 Checks if an class name is a gui object. Returns `true` if it is a gui object, `false` otherwise.
 
@@ -371,7 +409,7 @@ is_gui_object(string: name): boolean
 
 <ParamField path="name" type="string" required>The class name to check if it is a gui object.</ParamField>
 
-### set_parent
+#### set_parent
 
 Sets the parent Instance of an Instance.
 
@@ -381,7 +419,7 @@ set_parent(number: address, number: value): void
 
 <ParamField path="value" type="number" required>The Instance parent value to set.</ParamField>
 
-### get_camera
+#### get_camera
 
 Gets the current camera instance. Returns the camera as a number. Can be called with a Workspace address or without arguments to retrieve the cached camera.
 
@@ -391,7 +429,13 @@ get_camera(number?: address): number
 
 <ParamField path="address" type="number">The Workspace instance address. If not provided, returns the cached current camera.</ParamField>
 
-### get_terrain
+### Workspace
+
+This section provides methods for **inspecting, traversing, and manipulating** the properties and children specifically contained within the core **`Workspace`** instance of the game environment.
+
+---
+
+#### get_terrain
 
 Gets the terrain instance. Returns the terrain as a number. Can be called with a Workspace address or without arguments to retrieve the cached terrain.
 
@@ -400,4 +444,3 @@ get_terrain(number?: address): number
 ```
 
 <ParamField path="address" type="number">The Workspace instance address. If not provided, returns the cached terrain.</ParamField>
-
