@@ -687,3 +687,323 @@ set_decoration(number: address, boolean: value)
 
 <ParamField path="address" type="number" required>The Terrain Instance address.</ParamField>
 <ParamField path="value" type="boolean" required>Set to `true` to enable decoration (grass), `false` to disable it.</ParamField>
+
+### Players
+
+This section provides methods for **managing and querying** the game's player collection, including retrieving the local client player instance and the maximum number of players allowed in the game.
+
+---
+
+#### get_client
+
+Gets the local player Instance from the Players service. Returns the local player Instance address as a number.
+
+```lua
+get_client(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Players service Instance address.</ParamField>
+
+#### get_max_players
+
+Gets the maximum number of players that can be in the server. Returns the max player count as a number.
+
+```lua
+get_max_players(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Players service Instance address.</ParamField>
+
+### Lighting
+
+This section provides methods for **inspecting and manipulating** the **`Lighting`** instance's extensive properties, controlling the visual atmosphere, including ambient and directional light, shadows, fog, exposure, and the addresses of associated sky and atmosphere objects.
+
+---
+
+#### get_ambient
+
+Gets the ambient lighting color of the Lighting Instance. Returns a Color3 containing the ambient color.
+
+get_ambient(number: address): Color3
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_shift_bottom
+
+Gets the color shift for the bottom of the skybox in the Lighting Instance. Returns a Color3 containing the bottom shift color.
+
+get_shift_bottom(number: address): Color3
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_shift_top
+
+Gets the color shift for the top of the skybox in the Lighting Instance. Returns a Color3 containing the top shift color.
+
+get_shift_top(number: address): Color3
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_fog_color
+
+Gets the fog color of the Lighting Instance. Returns a Color3 containing the fog color.
+
+get_fog_color(number: address): Color3
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_outdoor_ambient
+
+Gets the outdoor ambient lighting color of the Lighting Instance. Returns a Color3 containing the outdoor ambient color.
+
+get_outdoor_ambient(number: address): Color3
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_brightness
+
+Gets the brightness level of the Lighting Instance. Returns the brightness as a number.
+
+get_brightness(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_diffuse_scale
+
+Gets the diffuse scale of the Lighting Instance. Returns the diffuse scale as a number.
+
+get_diffuse_scale(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_specular_scale
+
+Gets the specular scale of the Lighting Instance. Returns the specular scale as a number.
+
+get_specular_scale(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_exposure
+
+Gets the exposure level of the Lighting Instance. Returns the exposure as a number.
+
+get_exposure(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_fog_end
+
+Gets the fog end distance of the Lighting Instance. Returns the fog end distance as a number.
+
+get_fog_end(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_fog_start
+
+Gets the fog start distance of the Lighting Instance. Returns the fog start distance as a number.
+
+get_fog_start(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_shadow_softness
+
+Gets the shadow softness of the Lighting Instance. Returns the shadow softness as a number.
+
+get_shadow_softness(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_technology
+
+Gets the rendering technology mode of the Lighting Instance. Returns the technology mode as a number.
+
+get_technology(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_global_shadows
+
+Gets the global shadows state of the Lighting Instance. Returns `true` if global shadows are enabled, `false` otherwise.
+
+get_global_shadows(number: address): boolean
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_tint
+
+Gets the color tint of the Lighting Instance. Returns a Color3 containing the tint color.
+
+get_tint(number: address): Color3
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_direction
+
+Gets the light direction of the Lighting Instance. Returns the direction as a number.
+
+get_direction(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_sky
+
+Gets the Sky Instance from the Lighting Instance. Returns the Sky Instance address as a number.
+
+get_sky(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### get_atmosphere
+
+Gets the Atmosphere Instance from the Lighting Instance. Returns the Atmosphere Instance address as a number.
+
+get_atmosphere(number: address): number
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+
+#### set_ambient
+
+Sets the ambient lighting color of the Lighting Instance.
+
+set_ambient(number: address, Color3: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="Color3" required>The Color3 value to set for the ambient color.</ParamField>
+
+#### set_shift_bottom
+
+Sets the color shift for the bottom of the skybox in the Lighting Instance.
+
+set_shift_bottom(number: address, Color3: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="Color3" required>The Color3 value to set for the bottom shift color.</ParamField>
+
+#### set_shift_top
+
+Sets the color shift for the top of the skybox in the Lighting Instance.
+
+set_shift_top(number: address, Color3: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="Color3" required>The Color3 value to set for the top shift color.</ParamField>
+
+#### set_fog_color
+
+Sets the fog color of the Lighting Instance.
+
+set_fog_color(number: address, Color3: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="Color3" required>The Color3 value to set for the fog color.</ParamField>
+
+#### set_outdoor_ambient
+
+Sets the outdoor ambient lighting color of the Lighting Instance.
+
+set_outdoor_ambient(number: address, Color3: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="Color3" required>The Color3 value to set for the outdoor ambient color.</ParamField>
+
+#### set_brightness
+
+Sets the brightness level of the Lighting Instance.
+
+set_brightness(number: address, number: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="number" required>The brightness value to set.</ParamField>
+
+#### set_diffuse_scale
+
+Sets the diffuse scale of the Lighting Instance.
+
+set_diffuse_scale(number: address, number: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="number" required>The diffuse scale value to set.</ParamField>
+
+#### set_specular_scale
+
+Sets the specular scale of the Lighting Instance.
+
+set_specular_scale(number: address, number: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="number" required>The specular scale value to set.</ParamField>
+
+#### set_exposure
+
+Sets the exposure level of the Lighting Instance.
+
+set_exposure(number: address, number: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="number" required>The exposure value to set.</ParamField>
+
+#### set_fog_end
+
+Sets the fog end distance of the Lighting Instance.
+
+set_fog_end(number: address, number: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="number" required>The fog end distance to set.</ParamField>
+
+#### set_fog_start
+
+Sets the fog start distance of the Lighting Instance.
+
+set_fog_start(number: address, number: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="number" required>The fog start distance to set.</ParamField>
+
+#### set_shadow_softness
+
+Sets the shadow softness of the Lighting Instance.
+
+set_shadow_softness(number: address, number: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="number" required>The shadow softness value to set.</ParamField>
+
+#### set_technology
+
+Sets the rendering technology mode of the Lighting Instance.
+
+set_technology(number: address, number: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="number" required>The technology mode value to set.</ParamField>
+
+#### set_global_shadows
+
+Sets the global shadows state of the Lighting Instance.
+
+set_global_shadows(number: address, boolean: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="boolean" required>Set to `true` to enable global shadows, `false` to disable them.</ParamField>
+
+#### set_tint
+
+Sets the color tint of the Lighting Instance.
+
+set_tint(number: address, Color3: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="Color3" required>The Color3 value to set for the tint color.</ParamField>
+
+#### set_direction
+
+Sets the light direction of the Lighting Instance.
+
+set_direction(number: address, number: value)
+
+<ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
+<ParamField path="value" type="number" required>The direction value to set.</ParamField>
