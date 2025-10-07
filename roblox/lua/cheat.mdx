@@ -1625,3 +1625,35 @@ set_sit(number: address, boolean: value): void
 
 <ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
 <ParamField path="value" type="boolean" required>Set to `true` to make the humanoid sit, `false` to make it stand.</ParamField>
+
+### User Input
+
+This section provides a method for **inspecting** the **`UserInputService`** instance to determine if an input element, such as a text box, currently has focus.
+
+---
+
+#### get_focused_box
+
+Gets the current focused TextBox Instance that is being typed in from the UserInputService. Returns the TextBox Instance address as a number.
+
+```lua
+get_focused_box(): number
+```
+
+---
+
+### Part Adornment
+
+This section provides a method for **inspecting** instances of `SurfaceGui` or `BillboardGui` to retrieve the memory address of the **`Adornee`** part they are attached to and rendered upon.
+
+---
+
+#### get_adornee
+
+Gets the Adornee property of an Instance such as SurfaceGui or BillboardGui. Returns the Adornee Instance address as a number.
+
+```lua
+get_adornee(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Instance address (e.g., SurfaceGui, BillboardGui).</ParamField>
