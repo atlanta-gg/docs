@@ -1245,3 +1245,177 @@ get_part_color(number: address): Color3
 ```
 
 <ParamField path="address" type="number" required>The BasePart Instance address.</ParamField>
+
+### Primitive
+
+This section provides methods for **inspecting and manipulating** the core physical and spatial properties of a `BasePart`'s associated **`Primitive`** class. These functions control essential data like its `CFrame`, size, rotation, velocity, and fundamental physics behaviors such as gravity and collision.
+
+---
+
+#### get_gravity
+
+Gets the world gravity of the Primitive Instance. Returns the world multiplier as a number.
+
+```lua
+get_gravity(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+
+#### get_rotation
+
+Gets the rotation matrix of the Primitive Instance. Returns a Matrix3 containing the primitive's rotation.
+
+```lua
+get_rotation(number: address): Matrix3
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+
+#### get_translation
+
+Gets the translation (position) of the Primitive Instance. Returns a Vector3 containing the primitive's position.
+
+```lua
+get_translation(number: address): Vector3
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+
+#### get_cframe
+
+Gets the CFrame (coordinate frame) of the Primitive Instance. Returns a CFrame containing the primitive's position and orientation.
+
+```lua
+get_cframe(number: address): CFrame
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+
+#### get_velocity
+
+Gets the velocity of the Primitive Instance. Returns a Vector3 containing the primitive's velocity.
+
+```lua
+get_velocity(number: address): Vector3
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+
+#### get_size
+
+Gets the size of the Primitive Instance. Returns a Vector3 containing the part's dimensions.
+
+```lua
+get_size(number: address): Vector3
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+
+#### get_prim_parent
+
+Gets the BasePart Instance that this Primitive belongs to. Returns the BasePart Instance address as a number.
+
+```lua
+get_prim_parent(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+
+#### get_collision
+
+Gets the collision bitmask value of the Primitive Instance. Returns the collision bitmask value as a number.
+
+```lua
+get_collision(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+
+#### set_gravity
+
+Sets the gravity multiplier of the Primitive Instance.
+
+```lua
+set_gravity(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+<ParamField path="value" type="number" required>The world gravity to set.</ParamField>
+
+#### set_rotation
+
+Sets the rotation matrix of the Primitive Instance.
+
+```lua
+set_rotation(number: address, Matrix3: value): void
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+<ParamField path="value" type="Matrix3" required>The rotation matrix to set for the primitive.</ParamField>
+
+#### set_translation
+
+Sets the translation (position) of the Primitive Instance.
+
+```lua
+set_translation(number: address, Vector3: value): void
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+<ParamField path="value" type="Vector3" required>The position vector to set for the primitive.</ParamField>
+
+#### set_cframe
+
+Sets the CFrame (coordinate frame) of the Primitive Instance.
+
+```lua
+set_cframe(number: address, CFrame: value): void
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+<ParamField path="value" type="CFrame" required>The CFrame to set for the primitive's position and orientation.</ParamField>
+
+#### set_velocity
+
+Sets the velocity of the Primitive Instance.
+
+```lua
+set_velocity(number: address, Vector3: value): void
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+<ParamField path="value" type="Vector3" required>The velocity vector to set for the primitive.</ParamField>
+
+#### set_size
+
+Sets the size of the Primitive Instance.
+
+```lua
+set_size(number: address, Vector3: value): void
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+<ParamField path="value" type="Vector3" required>The size vector to set for the part's dimensions.</ParamField>
+
+#### set_collision
+
+Sets the collision bitmask value of the Primitive Instance.
+
+```lua
+set_collision(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+<ParamField path="value" type="number" required>The collision bitmask value to set.</ParamField>
+
+#### set_teleport
+
+Teleports the Primitive Instance to the specified position.
+
+```lua
+set_teleport(number: address, Vector3: value)
+```
+
+<ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
+<ParamField path="value" type="Vector3" required>The position vector to teleport the primitive to.</ParamField>
