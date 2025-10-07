@@ -1414,8 +1414,220 @@ set_collision(number: address, number: value): void
 Teleports the Primitive Instance to the specified position.
 
 ```lua
-set_teleport(number: address, Vector3: value)
+set_teleport(number: address, Vector3: value): void
 ```
 
 <ParamField path="address" type="number" required>The Primitive Instance address.</ParamField>
 <ParamField path="value" type="Vector3" required>The position vector to teleport the primitive to.</ParamField>
+
+### Bone
+
+This section provides methods for **inspecting and manipulating** the spatial properties of a **`Bone`** instance. These functions are used to retrieve the bone's rotation, translation, and `CFrame`, which are critical for warping and deforming associated meshes.
+
+---
+
+#### get_bone_rotation
+
+Gets the rotation matrix of the Bone Instance. Returns a Matrix3 containing the bone's rotation.
+
+```lua
+get_bone_rotation(number: address): Matrix3
+```
+
+<ParamField path="address" type="number" required>The Bone Instance address.</ParamField>
+
+#### get_bone_translation
+
+Gets the translation (position) of the Bone Instance. Returns a Vector3 containing the bone's position.
+
+```lua
+get_bone_translation(number: address): Vector3
+```
+
+<ParamField path="address" type="number" required>The Bone Instance address.</ParamField>
+
+#### get_bone_cframe
+
+Gets the CFrame (coordinate frame) of the Bone Instance. Returns a CFrame containing the bone's position and orientation.
+
+```lua
+get_bone_cframe(number: address): CFrame
+```
+
+<ParamField path="address" type="number" required>The Bone Instance address.</ParamField>
+
+#### get_bone_primitive
+
+Translates a Bone Instance address to its corresponding Primitive address, allowing primitive functions to work with bones. Returns the Primitive address as a number.
+
+```lua
+get_bone_primitive(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Bone Instance address.</ParamField>
+
+### Humanoid
+
+This section provides methods for **inspecting and manipulating** the core properties of a **`Humanoid`** instance. These functions control character health, speed, jump power, hip height, camera offset, and various behavioral states like sitting and auto-rotation.
+
+---
+
+### Humanoid
+
+This section provides methods for **inspecting and manipulating** the core properties of a **`Humanoid`** instance. These functions control character health, speed, jump power, hip height, camera offset, and various behavioral states like sitting and auto-rotation.
+
+---
+
+#### get_camera_offset
+
+Gets the camera offset of the Humanoid Instance. Returns a Vector3 containing the camera offset.
+
+```lua
+get_camera_offset(number: address): Vector3
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+
+#### get_health
+
+Gets the current health of the Humanoid Instance. Returns the health as a number.
+
+```lua
+get_health(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+
+#### get_hip_height
+
+Gets the hip height of the Humanoid Instance. Returns the hip height as a number.
+
+```lua
+get_hip_height(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+
+#### get_jump_power
+
+Gets the jump power of the Humanoid Instance. Returns the jump power as a number.
+
+```lua
+get_jump_power(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+
+#### get_max_health
+
+Gets the maximum health of the Humanoid Instance. Returns the max health as a number.
+
+```lua
+get_max_health(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+
+#### get_walk_speed
+
+Gets the walk speed of the Humanoid Instance. Returns the walk speed as a number.
+
+```lua
+get_walk_speed(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+
+#### get_auto_rotate
+
+Gets the auto-rotate state of the Humanoid Instance. Returns `true` if auto-rotate is enabled, `false` otherwise.
+
+```lua
+get_auto_rotate(number: address): boolean
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+
+#### get_jump
+
+Gets the jump state of the Humanoid Instance. Returns `true` if the humanoid is jumping, `false` otherwise.
+
+get_jump(number: address): boolean
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+
+#### get_sit
+
+Gets the sit state of the Humanoid Instance. Returns `true` if the humanoid is sitting, `false` otherwise.
+
+```lua
+get_sit(number: address): boolean
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+
+#### set_camera_offset
+
+Sets the camera offset of the Humanoid Instance.
+
+```lua
+set_camera_offset(number: address, Vector3: value): void
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+<ParamField path="value" type="Vector3" required>The camera offset vector to set.</ParamField>
+
+#### set_hip_height
+
+Sets the hip height of the Humanoid Instance.
+
+```lua
+set_hip_height(number: address, number: value)
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+<ParamField path="value" type="number" required>The hip height to set.</ParamField>
+
+#### set_jump_power
+
+Sets the jump power of the Humanoid Instance.
+
+```lua
+set_jump_power(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+<ParamField path="value" type="number" required>The jump power to set.</ParamField>
+
+#### set_walk_speed
+
+Sets the walk speed of the Humanoid Instance.
+
+```lua
+set_walk_speed(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+<ParamField path="value" type="number" required>The walk speed to set.</ParamField>
+
+#### set_auto_rotate
+
+Sets the auto-rotate state of the Humanoid Instance.
+
+```lua
+set_auto_rotate(number: address, boolean: value): void
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+<ParamField path="value" type="boolean" required>Set to `true` to enable auto-rotate, `false` to disable it.</ParamField>
+
+#### set_sit
+
+Sets the sit state of the Humanoid Instance.
+
+```lua
+set_sit(number: address, boolean: value): void
+```
+
+<ParamField path="address" type="number" required>The Humanoid Instance address.</ParamField>
+<ParamField path="value" type="boolean" required>Set to `true` to make the humanoid sit, `false` to make it stand.</ParamField>
