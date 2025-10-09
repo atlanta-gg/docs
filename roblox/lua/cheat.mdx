@@ -84,7 +84,7 @@ get_engine(): number
 
 ---
 
-### DataModel
+### Data Model
 
 This section lists methods that operate directly on the core **DataModel Instance**. These functions are essential for traversing the game hierarchy, retrieving key services, and accessing global game identification details.
 
@@ -208,7 +208,7 @@ set_sky_state(number: address, boolean: value): void
 <ParamField path="address" type="number" required>The Render View Instance address.</ParamField>
 <ParamField path="value" type="boolean" required>The sky state value. Set to `false` to trigger sky updates.</ParamField>
 
-### FFlags
+### Fast Flags
 
 This section lists methods specifically for interacting with **Fast Flags (FFlags)**. These functions allow you to dynamically read and write internal, experimental, or configuration variables used by the game engine to control features and behavior at runtime.
 
@@ -1206,7 +1206,7 @@ get_primary_part(number: address): number
 
 <ParamField path="address" type="number" required>The Model Instance address.</ParamField>
 
-### BasePart
+### Base Part
 
 This section provides methods for **inspecting and manipulating** properties common to all **`BasePart`** derivatives (e.g., `Part`, `MeshPart`, `UnionOperation`). These functions control aspects like transparency, retrieving primitive, and visual appearance.
 
@@ -1658,7 +1658,7 @@ get_adornee(number: address): number
 
 <ParamField path="address" type="number" required>The Instance address (e.g., SurfaceGui, BillboardGui).</ParamField>
 
-### GuiObject
+### Gui Object
 
 This section provides methods for **inspecting** properties shared across all **`GuiObject`** derivatives (e.g., `Frame`, `TextButton`, `ImageLabel`). These functions allow you to retrieve critical layout information, such as absolute position, absolute size, and the full absolute bounding rectangle on the screen.
 
@@ -1694,7 +1694,7 @@ get_absolute_rect(number: address): Rect
 
 <ParamField path="address" type="number" required>The GuiObject Instance address.</ParamField>
 
-### TextLabel
+### Text Label
 
 This section provides a method for **inspecting** the **`TextLabel`** instance to retrieve the string content currently being displayed.
 
@@ -1710,7 +1710,7 @@ get_label_text(number: address): string
 
 <ParamField path="address" type="number" required>The TextLabel Instance address.</ParamField>
 
-### TextButton
+### Text Button
 
 This section provides a method for **inspecting** the **`TextButton`** instance to retrieve the string content that is rendered on the button's surface.
 
@@ -1726,7 +1726,7 @@ get_button_text(number: address): string
 
 <ParamField path="address" type="number" required>The TextButton Instance address.</ParamField>
 
-### TextBox
+### Text Box
 
 This section provides a method for **inspecting** the **`TextBox`** instance to retrieve the string content currently entered or stored within the input field.
 
@@ -1941,3 +1941,123 @@ set_brick_color_value(number: address, number: value): void
 
 <ParamField path="address" type="number" required>The BrickColorValue Instance address.</ParamField>
 <ParamField path="value" type="number" required>The BrickColor ID to set.</ParamField>
+
+### Mesh Part
+
+This section provides methods for **inspecting** the **`MeshPart`** instance to retrieve the **IDs** referencing its mesh geometry and associated texture map.
+
+---
+
+#### get_mesh_part_mesh
+
+Gets the mesh ID of the MeshPart Instance. Returns the mesh ID as a string.
+
+```lua
+get_mesh_part_mesh(number: address): string
+```
+
+<ParamField path="address" type="number" required>The MeshPart Instance address.</ParamField>
+
+#### get_mesh_part_texture
+
+Gets the texture ID of the MeshPart Instance. Returns the texture ID as a string.
+
+```lua
+get_mesh_part_texture(number: address): string
+```
+
+<ParamField path="address" type="number" required>The MeshPart Instance address.</ParamField>
+
+### Special Mesh
+
+This section provides methods for **inspecting** the **`SpecialMesh`** instance to retrieve the **IDs** referencing its mesh geometry and associated texture map.
+
+---
+
+#### get_special_mesh_id
+
+Gets the mesh ID of the SpecialMesh Instance. Returns the mesh ID as a string.
+
+```lua
+get_special_mesh_id(number: address): string
+```
+
+<ParamField path="address" type="number" required>The SpecialMesh Instance address.</ParamField>
+
+#### get_special_texture_id
+
+Gets the texture ID of the SpecialMesh Instance. Returns the texture ID as a string.
+
+```lua
+get_special_texture_id(number: address): string
+```
+
+<ParamField path="address" type="number" required>The SpecialMesh Instance address.</ParamField>
+
+### Texture
+
+This section provides methods for **inspecting** the **`Texture`** instance to retrieve properties such as the **ID** referencing the image asset and its associated color value.
+
+---
+
+#### get_texture_texture
+
+Gets the texture ID of the Texture Instance. Returns the texture ID as a string.
+
+```lua
+get_texture_texture(number: address): string
+```
+
+<ParamField path="address" type="number" required>The Texture Instance address.</ParamField>
+
+#### get_texture_color
+
+Gets the texture color of the Texture Instance. Returns the texture color as a Color3.
+
+```lua
+get_texture_color(number: address): Color3
+```
+
+<ParamField path="address" type="number" required>The Texture Instance address.</ParamField>
+
+### Decal
+
+This section provides methods for **inspecting** the **`Decal`** instance to retrieve properties such as the **ID** referencing the image asset and its associated color value.
+
+---
+
+#### get_decal_texture
+
+Gets the texture ID of the Decal Instance. Returns the texture ID as a string.
+
+```lua
+get_decal_texture(number: address): string
+```
+
+<ParamField path="address" type="number" required>The Decal Instance address.</ParamField>
+
+#### get_decal_color
+
+Gets the decal color of the Decal Instance. Returns the decal color as a Color3.
+
+```lua
+get_decal_color(number: address): Color3
+```
+
+<ParamField path="address" type="number" required>The Decal Instance address.</ParamField>
+
+### Sound
+
+This section provides a method for **inspecting** the **`Sound`** instance to retrieve the **ID** referencing the audio asset it is configured to play.
+
+---
+
+#### get_sound_id
+
+Gets the sound ID of the Sound Instance. Returns the sound ID as a string.
+
+```lua
+get_sound_id(number: address): string
+```
+
+<ParamField path="address" type="number" required>The Sound Instance address.</ParamField>
