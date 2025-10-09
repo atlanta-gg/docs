@@ -1657,3 +1657,287 @@ get_adornee(number: address): number
 ```
 
 <ParamField path="address" type="number" required>The Instance address (e.g., SurfaceGui, BillboardGui).</ParamField>
+
+### GuiObject
+
+This section provides methods for **inspecting** properties shared across all **`GuiObject`** derivatives (e.g., `Frame`, `TextButton`, `ImageLabel`). These functions allow you to retrieve critical layout information, such as absolute position, absolute size, and the full absolute bounding rectangle on the screen.
+
+---
+
+#### get_absolute_position
+
+Gets the absolute screen position of the GuiObject Instance. Returns a Vector2 containing the X and Y position.
+
+```lua
+get_absolute_position(number: address): Vector2
+```
+
+<ParamField path="address" type="number" required>The GuiObject Instance address.</ParamField>
+
+#### get_absolute_size
+
+Gets the absolute screen size of the GuiObject Instance. Returns a Vector2 containing the width and height.
+
+```lua
+get_absolute_size(number: address): Vector2
+```
+
+<ParamField path="address" type="number" required>The GuiObject Instance address.</ParamField>
+
+#### get_absolute_rect
+
+Gets the absolute screen rectangle of the GuiObject Instance. Returns a Rect where `low` is the position and `high` is the size.
+
+```lua
+get_absolute_rect(number: address): Rect
+```
+
+<ParamField path="address" type="number" required>The GuiObject Instance address.</ParamField>
+
+### TextLabel
+
+This section provides a method for **inspecting** the **`TextLabel`** instance to retrieve the string content currently being displayed.
+
+---
+
+#### get_label_text
+
+Gets the text content of the TextLabel Instance. Returns the text as a string.
+
+```lua
+get_label_text(number: address): string
+```
+
+<ParamField path="address" type="number" required>The TextLabel Instance address.</ParamField>
+
+### TextButton
+
+This section provides a method for **inspecting** the **`TextButton`** instance to retrieve the string content that is rendered on the button's surface.
+
+---
+
+#### get_button_text
+
+Gets the text content of the TextButton Instance. Returns the text as a string.
+
+```lua
+get_button_text(number: address): string
+```
+
+<ParamField path="address" type="number" required>The TextButton Instance address.</ParamField>
+
+### TextBox
+
+This section provides a method for **inspecting** the **`TextBox`** instance to retrieve the string content currently entered or stored within the input field.
+
+---
+
+#### get_box_text
+
+Gets the text content of the TextBox Instance. Returns the text as a string.
+
+```lua
+get_box_text(number: address): string
+```
+
+<ParamField path="address" type="number" required>The TextBox Instance address.</ParamField>
+
+### Tool
+
+This section provides methods for **inspecting and manipulating** properties of a **`Tool`** instance, including retrieving its texture reference and accessing or setting the tool's grip position and orientation.
+
+---
+
+#### get_tool_texture
+
+Gets the texture ID of the Tool Instance. Returns the texture ID as a string.
+
+```lua
+get_tool_texture(number: address): string
+```
+
+<ParamField path="address" type="number" required>The Tool Instance address.</ParamField>
+
+#### get_tool_grip
+
+Gets the grip CFrame of the Tool Instance. Returns a CFrame containing the tool's grip position and orientation.
+
+```lua
+get_tool_grip(number: address): CFrame
+```
+
+<ParamField path="address" type="number" required>The Tool Instance address.</ParamField>
+
+#### set_tool_grip
+
+Sets the grip CFrame of the Tool Instance.
+
+```lua
+set_tool_grip(number: address, CFrame: value): void
+```
+
+<ParamField path="address" type="number" required>The Tool Instance address.</ParamField>
+<ParamField path="value" type="CFrame" required>The CFrame to set for the tool's grip position and orientation.</ParamField>
+
+### Value
+
+This section provides methods for **inspecting and manipulating** the stored data within various **Value-based instances** (e.g., `NumberValue`, `ObjectValue`, `StringValue`). These functions allow you to read and write the core primitive or structure held by the respective value object.
+
+---g
+
+#### get_int_value
+
+Gets the stored integer value of the IntValue Instance. Returns the integer as a number.
+
+```lua
+get_int_value(number: address): number
+```
+
+<ParamField path="address" type="number" required>The IntValue Instance address.</ParamField>
+
+#### get_bool_value
+
+Gets the stored boolean value of the BoolValue Instance. Returns `true` or `false`.
+
+```lua
+get_bool_value(number: address): boolean
+```
+
+<ParamField path="address" type="number" required>The BoolValue Instance address.</ParamField>
+
+#### get_cframe_value
+
+Gets the stored CFrame value of the CFrameValue Instance. Returns a CFrame.
+
+```lua
+get_cframe_value(number: address): CFrame
+```
+
+<ParamField path="address" type="number" required>The CFrameValue Instance address.</ParamField>
+
+#### get_number_value
+
+Gets the stored number value of the NumberValue Instance. Returns the number as a double.
+
+```lua
+get_number_value(number: address): number
+```
+
+<ParamField path="address" type="number" required>The NumberValue Instance address.</ParamField>
+
+#### get_object_value
+
+Gets the stored object reference of the ObjectValue Instance. Returns the referenced Instance address as a number.
+
+```lua
+get_object_value(number: address): number
+```
+
+<ParamField path="address" type="number" required>The ObjectValue Instance address.</ParamField>
+
+#### get_string_value
+
+Gets the stored string value of the StringValue Instance. Returns the string.
+
+```lua
+get_string_value(number: address): string
+```
+
+<ParamField path="address" type="number" required>The StringValue Instance address.</ParamField>
+
+#### get_vector3_value
+
+Gets the stored Vector3 value of the Vector3Value Instance. Returns a Vector3.
+
+```lua
+get_vector3_value(number: address): Vector3
+```
+
+<ParamField path="address" type="number" required>The Vector3Value Instance address.</ParamField>
+
+#### get_brick_color_value
+
+Gets the stored BrickColor ID of the BrickColorValue Instance. Returns the BrickColor ID as a number.
+
+```lua
+get_brick_color_value(number: address): number
+```
+
+<ParamField path="address" type="number" required>The BrickColorValue Instance address.</ParamField>
+
+#### set_int_value
+
+Sets the stored integer value of the IntValue Instance.
+
+```lua
+set_int_value(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The IntValue Instance address.</ParamField>
+<ParamField path="value" type="number" required>The integer value to set.</ParamField>
+
+#### set_bool_value
+
+Sets the stored boolean value of the BoolValue Instance.
+
+```lua
+set_bool_value(number: address, boolean: value): void
+```
+
+<ParamField path="address" type="number" required>The BoolValue Instance address.</ParamField>
+<ParamField path="value" type="boolean" required>The boolean value to set.</ParamField>
+
+#### set_cframe_value
+
+Sets the stored CFrame value of the CFrameValue Instance.
+
+```lua
+set_cframe_value(number: address, CFrame: value): void
+```
+
+<ParamField path="address" type="number" required>The CFrameValue Instance address.</ParamField>
+<ParamField path="value" type="CFrame" required>The CFrame value to set.</ParamField>
+
+#### set_number_value
+
+Sets the stored number value of the NumberValue Instance.
+
+```lua
+set_number_value(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The NumberValue Instance address.</ParamField>
+<ParamField path="value" type="number" required>The number value to set.</ParamField>
+
+#### set_object_value
+
+Sets the stored object reference of the ObjectValue Instance.
+
+```lua
+set_object_value(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The ObjectValue Instance address.</ParamField>
+<ParamField path="value" type="number" required>The Instance address to set as the object reference.</ParamField>
+
+#### set_vector3_value
+
+Sets the stored Vector3 value of the Vector3Value Instance.
+
+```lua
+set_vector3_value(number: address, Vector3: value): void
+```
+
+<ParamField path="address" type="number" required>The Vector3Value Instance address.</ParamField>
+<ParamField path="value" type="Vector3" required>The Vector3 value to set.</ParamField>
+
+#### set_brick_color_value
+
+Sets the stored BrickColor ID of the BrickColorValue Instance.
+
+```lua
+set_brick_color_value(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The BrickColorValue Instance address.</ParamField>
+<ParamField path="value" type="number" required>The BrickColor ID to set.</ParamField>
