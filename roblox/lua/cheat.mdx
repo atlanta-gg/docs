@@ -1076,6 +1076,165 @@ set_direction(number: address, number: value): void
 <ParamField path="address" type="number" required>The Lighting Instance address.</ParamField>
 <ParamField path="value" type="number" required>The direction value to set.</ParamField>
 
+### Sky
+
+This section provides a method for **inspecting** the **`Sky`** instance to retrieve its current orientation in the game world.
+
+---
+
+#### get_sky_orientation
+
+Gets the skybox orientation of the Sky Instance. Returns a Vector3 containing the skybox's rotation angles.
+
+```lua
+get_sky_orientation(number: address): Vector3
+```
+
+<ParamField path="address" type="number" required>The Sky Instance address.</ParamField>
+
+#### set_sky_orientation
+
+Sets the skybox orientation of the Sky Instance.
+
+```lua
+set_sky_orientation(number: address, Vector3: value): void
+```
+
+<ParamField path="address" type="number" required>The Sky Instance address.</ParamField>
+<ParamField path="value" type="Vector3" required>The rotation angles vector to set for the skybox's orientation.</ParamField>
+
+### Atmosphere
+
+This section provides methods for **inspecting and manipulating** the **`Atmosphere`** instance's properties. These functions control various environmental effects such as light density, color, haze, glare, decay, and positional offset.
+
+---
+
+#### get_density
+
+Gets the density of the Atmosphere Instance. Returns the density as a number.
+
+```lua
+get_density(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+
+#### get_offset
+
+Gets the offset of the Atmosphere Instance. Returns the offset as a number.
+
+```lua
+get_offset(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+
+#### get_atmosphere_color
+
+Gets the color of the Atmosphere Instance. Returns a Color3 containing the atmosphere color.
+
+```lua
+get_atmosphere_color(number: address): Color3
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+
+#### get_decay
+
+Gets the decay color of the Atmosphere Instance. Returns a Color3 containing the decay color.
+
+```lua
+get_decay(number: address): Color3
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+
+#### get_glare
+
+Gets the glare intensity of the Atmosphere Instance. Returns the glare as a number.
+
+```lua
+get_glare(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+
+#### get_haze
+
+Gets the haze intensity of the Atmosphere Instance. Returns the haze as a number.
+
+```lua
+get_haze(number: address): number
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+
+#### set_density
+
+Sets the density of the Atmosphere Instance.
+
+```lua
+set_density(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+<ParamField path="value" type="number" required>The density value to set.</ParamField>
+
+#### set_offset
+
+Sets the offset of the Atmosphere Instance.
+
+```lua
+set_offset(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+<ParamField path="value" type="number" required>The offset value to set.</ParamField>
+
+#### set_atmosphere_color
+
+Sets the color of the Atmosphere Instance.
+
+```lua
+set_atmosphere_color(number: address, Color3: value): void
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+<ParamField path="value" type="Color3" required>The Color3 value to set for the atmosphere color.</ParamField>
+
+#### set_decay
+
+Sets the decay color of the Atmosphere Instance.
+
+```lua
+set_decay(number: address, Color3: value): void
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+<ParamField path="value" type="Color3" required>The Color3 value to set for the decay color.</ParamField>
+
+#### set_glare
+
+Sets the glare intensity of the Atmosphere Instance.
+
+```lua
+set_glare(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+<ParamField path="value" type="number" required>The glare value to set.</ParamField>
+
+#### set_haze
+
+Sets the haze intensity of the Atmosphere Instance.
+
+```lua
+set_haze(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The Atmosphere Instance address.</ParamField>
+<ParamField path="value" type="number" required>The haze value to set.</ParamField>
+
 ### Player
 
 This section provides methods for **inspecting and manipulating** individual **`Player`** instances. These functions allow access to player-specific details such as their display name, team, user ID, account age, character instance, and client properties like camera zoom and idle time.
