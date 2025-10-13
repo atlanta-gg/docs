@@ -2101,6 +2101,43 @@ set_brick_color_value(number: address, number: value): void
 <ParamField path="address" type="number" required>The BrickColorValue Instance address.</ParamField>
 <ParamField path="value" type="number" required>The BrickColor ID to set.</ParamField>
 
+### Stats Item
+
+This section provides methods for **inspecting and manipulating** the stored data within a **`StatsItem`** instance. These functions allow you to read and write both the numerical and string values contained within the item.
+
+---
+
+#### get_stats_value
+
+Gets the numeric value of the StatsItem Instance. Returns the value as a number.
+
+```lua
+get_stats_value(number: address): number
+```
+
+<ParamField path="address" type="number" required>The StatsItem Instance address.</ParamField>
+
+#### get_stats_svalue
+
+Gets the string value of the StatsItem Instance. Returns the value as a string.
+
+```lua
+get_stats_svalue(number: address): string
+```
+
+<ParamField path="address" type="number" required>The StatsItem Instance address.</ParamField>
+
+#### set_stats_value
+
+Sets the numeric value of the StatsItem Instance.
+
+```lua
+set_stats_value(number: address, number: value): void
+```
+
+<ParamField path="address" type="number" required>The StatsItem Instance address.</ParamField>
+<ParamField path="value" type="number" required>The numeric value to set.</ParamField>
+
 ### Mesh Part
 
 This section provides methods for **inspecting** the **`MeshPart`** instance to retrieve the **IDs** referencing its mesh geometry and associated texture map.
