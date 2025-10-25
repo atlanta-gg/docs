@@ -294,6 +294,17 @@ get_children_name(number: address, string: name): table
 <ParamField path="address" type="number" required>The Instance address to get the children from.</ParamField>
 <ParamField path="name" type="string" required>The specific name to look for in the children.</ParamField>
 
+#### get_children_class
+
+Gets the children of an Instance with a specific class name. Returns the children as a table.
+
+```lua
+get_children_class(number: address, string: name): table
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the children from.</ParamField>
+<ParamField path="name" type="string" required>The specific class name to look for in the children.</ParamField>
+
 #### get_child
 
 Gets the first child of an Instance. Returns the child as a number.
@@ -356,6 +367,18 @@ find_last_child(number: address, string: name, number?: amount): number
 
 <ParamField path="address" type="number" required>The Instance address to get the Instance from.</ParamField>
 <ParamField path="name" type="string" required>The specific name to look for in the children.</ParamField>
+<ParamField path="amount" type="number">The amount of children to get. Defaults to `100`.</ParamField>
+
+#### find_last_class
+
+Gets the last child of an Instance with a specific class name. Returns the Instance as a number.
+
+```lua
+find_last_class(number: address, string: name, number?: amount): number
+```
+
+<ParamField path="address" type="number" required>The Instance address to get the Instance from.</ParamField>
+<ParamField path="name" type="string" required>The specific class name to look for in the children.</ParamField>
 <ParamField path="amount" type="number">The amount of children to get. Defaults to `100`.</ParamField>
 
 #### has_children
