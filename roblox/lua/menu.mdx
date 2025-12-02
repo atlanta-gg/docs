@@ -120,9 +120,24 @@ add_colorpicker(string: name, string: key, Color4?: default, boolean?: alpha, bo
 
 <ParamField path="name" type="string" required>The text label displayed next to the color picker in the menu.</ParamField>
 <ParamField path="key" type="string" required>The **unique configuration key** used to get and set the colorpickers Color4 value via `get_item` and `set_item`.</ParamField>
-<ParamField path="default" type="Color4">The **default color** (initial state) for the picker. Defaults to a fully transparent black color (1, 1, 1, 1).</ParamField>
+<ParamField path="default" type="Color4">The **default color** (initial state) for the picker. Defaults to a fully white color (1, 1, 1, 1).</ParamField>
 <ParamField path="alpha" type="boolean">If `true`, the color picker will include an Alpha (transparency) slider. Defaults to `true`.</ParamField>
 <ParamField path="inlayed" type="boolean">If `true`, the color picker will be inlayed further down below the last widget. Defaults to `false`.</ParamField>
+
+### add_notification
+
+Registers a notification widget that allows the user to optionally click a button with a callback.
+
+```lua
+add_notification(NotificationType | number: type, string: title, string?: description, number?: time, string?: button_name, function?: callback): void
+```
+
+<ParamField path="type" type="NotificationType | number" required>The identifier type to be displayed inside of the notification.</ParamField>
+<ParamField path="title" type="string" required>The title text label displayed inside of the notification.</ParamField>
+<ParamField path="description" type="string">The description text label displayed inside of the notification.</ParamField>
+<ParamField path="time" type="number">The time it takes for the notification to fade away in milliseconds.</ParamField>
+<ParamField path="button_name" type="string">The text label displayed inside of the button.</ParamField>
+<ParamField path="callback" type="function" required>The Lua function to be executed when the button on the notification is clicked.</ParamField>
 
 ### get_item
 

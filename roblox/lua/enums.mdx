@@ -35,6 +35,17 @@ This enumeration lists the available event triggers that scripts can register fu
 <ParamField path="Leave" type="number"> Triggered when a registered entry has left the game.</ParamField>
 <ParamField path="Unload" type="number"> Triggered when all scripts or the software is unloaded.</ParamField>
 
+### NotificationType
+
+This enumartion lists the available notification types that can be used to register a notification widget using the **`menu.add_notification`** function.
+
+<ParamField path="None" type="number"> No identifier.</ParamField>
+<ParamField path="Success" type="number"> Green identifier.</ParamField>
+<ParamField path="Error" type="number"> Red identifier.</ParamField>
+<ParamField path="Warning" type="number"> Orange identifier.</ParamField>
+<ParamField path="Info" type="number"> Blue identifier.</ParamField>
+<ParamField path="Accent" type="number"> Accent color identifier.</ParamField>
+
 ### GlobalType
 
 This enumeration lists the available global section types that you can use with the **`menu.set_global`** and **`menu.get_global`** functions.
